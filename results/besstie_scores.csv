@@ -1,0 +1,3 @@
+task,matches,items,agreement,kappa
+sentiment,25,30,0.8333333333333334,0.6666666666666667
+sarcasm,27,30,0.9,0.6086956521739131

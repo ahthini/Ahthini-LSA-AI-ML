@@ -1,0 +1,9 @@
+#direct dependencies pinned to the working python 3.12 environment
+datasets==5.1.0
+duckdb==1.5.6
+gradio==6.30.0
+ipykernel==7.4.0
+ipython==9.17.1
+pandas==3.0.6
+requests==2.34.2
+scikit-learn==1.9.1

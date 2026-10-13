@@ -1,0 +1,1141 @@
+id,prompt,model,prompt_template,timestamp_utc,status,ai_label,ai_confidence,valid,error,raw_reply
+1,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:12.488008+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+2,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:17.068399+00:00,ok,World,0.93,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.93
+}"
+3,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:21.869479+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+4,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:26.691470+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+5,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:31.510168+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+6,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:36.333485+00:00,ok,Sci/Tech,0.93,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.93
+}"
+7,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:40.889017+00:00,ok,World,0.96,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.96
+}"
+8,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:45.290530+00:00,ok,Business,0.97,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.97
+}"
+9,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:50.537368+00:00,ok,Business,0.95,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.95
+}"
+10,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:55.538570+00:00,ok,Sci/Tech,0.75,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.75
+}"
+11,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:58:59.996098+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+12,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:04.650752+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+13,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:09.330437+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+14,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:14.116346+00:00,ok,Sci/Tech,0.95,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.95
+}"
+15,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:19.116509+00:00,ok,Sci/Tech,0.92,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.92
+}"
+16,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:24.361310+00:00,ok,Business,0.78,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.78
+}"
+17,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:29.215298+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+18,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:34.464435+00:00,ok,Business,0.92,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.92
+}"
+19,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:39.750037+00:00,ok,Business,0.96,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.96
+}"
+20,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:44.541856+00:00,ok,World,0.93,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.93
+}"
+21,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:49.685220+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+22,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:54.527362+00:00,ok,Business,0.96,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.96
+}"
+23,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T22:59:59.198576+00:00,ok,Business,0.96,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.96
+}"
+24,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:04.344808+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+25,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:09.278946+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+26,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:13.833430+00:00,ok,Sports,0.97,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.97
+}"
+27,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:18.563587+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+28,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:23.235423+00:00,ok,Sci/Tech,0.78,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.78
+}"
+29,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:28.462312+00:00,ok,Business,0.66,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.66
+}"
+30,specific,openai/gpt-oss-120b,"
+You are classifying news items into exactly one of four categories.
+
+World: international news, politics, conflict, disasters, national affairs.
+Sports: matches, results, athletes, teams, transfers, tournaments.
+Business: companies, markets, earnings, the economy, trade, jobs, deals.
+Sci/Tech: science, research, technology, software, space, health research.
+
+Boundary rules, apply them in this order:
+1. A foreign company's earnings or a currency move is Business, not World.
+2. A broadcasting rights deal or a club's finances is Business, not Sports.
+3. A product's technical capability is Sci/Tech. Its commercial impact is Business.
+4. If two categories still fit, choose the one the item is mostly about.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:33.226631+00:00,ok,Sci/Tech,0.95,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.95
+}"
+1,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:37.806080+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+2,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:42.623956+00:00,ok,World,0.96,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.96
+}"
+3,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:47.383299+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+4,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:51.796850+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+5,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:00:56.416899+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+6,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:02.025433+00:00,ok,Sci/Tech,0.92,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.92
+}"
+7,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:06.920714+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+8,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:11.597002+00:00,ok,Business,0.97,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.97
+}"
+9,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:16.351757+00:00,ok,Business,0.93,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.93
+}"
+10,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:21.423795+00:00,ok,Sci/Tech,0.92,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.92
+}"
+11,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:26.141532+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+12,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:30.891439+00:00,ok,World,0.98,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.98
+}"
+13,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:35.479908+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+14,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:40.291266+00:00,ok,Sci/Tech,0.97,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.97
+}"
+15,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:45.630191+00:00,ok,Sci/Tech,0.92,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.92
+}"
+16,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:50.497765+00:00,ok,Business,0.78,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.78
+}"
+17,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:55.151020+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+18,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:01:59.916424+00:00,ok,Business,0.86,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.86
+}"
+19,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:04.755386+00:00,ok,Business,0.96,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.96
+}"
+20,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:09.363361+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+21,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:13.919112+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+22,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:18.577303+00:00,ok,Business,0.86,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.86
+}"
+23,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:23.506379+00:00,ok,Business,0.96,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.96
+}"
+24,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:28.262562+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+25,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:32.986299+00:00,ok,World,0.97,True,,"{
+  ""label"": ""World"",
+  ""confidence"": 0.97
+}"
+26,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:37.837683+00:00,ok,Sports,0.98,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.98
+}"
+27,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:42.878713+00:00,ok,Sports,0.99,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.99
+}"
+28,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:47.826841+00:00,ok,Sports,0.71,True,,"{
+  ""label"": ""Sports"",
+  ""confidence"": 0.71
+}"
+29,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:52.515361+00:00,ok,Business,0.78,True,,"{
+  ""label"": ""Business"",
+  ""confidence"": 0.78
+}"
+30,vague,openai/gpt-oss-120b,"
+What category is this news item? Pick one.
+World, Sports, Business, Sci/Tech.
+
+Return only a JSON object with:
+- ""label"": exactly World, Sports, Business, or Sci/Tech
+- ""confidence"": a number between 0 and 1
+
+News item:
+{text}
+",2026-10-12T23:02:57.542688+00:00,ok,Sci/Tech,0.97,True,,"{
+  ""label"": ""Sci/Tech"",
+  ""confidence"": 0.97
+}"

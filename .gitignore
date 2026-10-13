@@ -1,0 +1,25 @@
+#Local secrets
+.env
+.env.*
+!.env.example
+
+#Python environment and generated files
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+#macOS
+.DS_Store
+
+#Supplied assignment documents stay local
+Week1_Assignment_*.pdf
+Week1_Labelling_Workbook.xlsx
+
+#generated gradio files
+.gradio/
+
+#office temporary files
+~$*
