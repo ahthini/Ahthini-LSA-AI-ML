@@ -1,0 +1,17 @@
+{
+  "url": "https://ahthini-newsroom-triage.onrender.com",
+  "service_id": "srv-dbdekl9srm7s73bg1200",
+  "first_deployment_commit": "a9457b437183c3b58671a5b9c1b45ed3e5614f6c",
+  "branch": "week2-developer",
+  "root_directory": "Week 2/newsroom_app",
+  "plan": "free",
+  "verification": "Render deployment succeeded, improved branch restored",
+  "restored_commit": "11ca8f0c15e5a6884fb9c236ad835f3b9a6411e6",
+  "restored_deployment": "dep-dbdid5rrjlhs73ddh2r0",
+  "hosted_baseline_correct": 21,
+  "hosted_improved_correct": 25,
+  "cold_start_observation_seconds": [
+    51.415,
+    75.023
+  ]
+}

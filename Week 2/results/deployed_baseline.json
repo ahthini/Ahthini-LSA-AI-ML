@@ -1,0 +1,12 @@
+{
+  "version": "reconstructed_baseline",
+  "commit": "db0d70641e19aeabb827981ed3f38abf0399d444",
+  "url": "https://ahthini-newsroom-triage.onrender.com",
+  "correct": 21,
+  "total": 30,
+  "accuracy": 0.7,
+  "kappa": 0.6132,
+  "source": "hosted Scoring page",
+  "observed_at": "2026-10-23T09:18:53.885Z",
+  "note": "Original prompt and floor 0, with 1024 token limit and consistency feature retained. Fresh-session retry returned the score."
+}

@@ -43,4 +43,9 @@ Enter `GROQ_API_KEY` in Render's environment settings. Never commit it.
 The scoring page uses `manual_labels.csv` and pauses between live items.
 SQLite records on an ephemeral hosting filesystem may be lost on restart.
 
-Deployment and cold-start measurements remain pending until verified on Render.
+Live app: https://ahthini-newsroom-triage.onrender.com
+
+Hosted scores are saved in `../results/deployed_*.json`. After idle, the service
+was still waking at 51.4 seconds and ready by 75.0 seconds. This is an observation
+range for page readiness, not an exact startup time or model latency.
+See `../results/cold_start.json` and `../evidence/cold_start_*.png`.
