@@ -198,6 +198,10 @@ class Trace:
     final: str = ""
     mode: str = "demo"
     ms: int = 0
+    second_answer: Optional[str] = None
+    second_confidence: Optional[float] = None
+    agreed: Optional[bool] = None
+    consistency_error: str = ""
 
 SAFE = "I am not able to answer that one."
 
@@ -233,6 +237,19 @@ def classify(headline):
         else:
             cat, conf = _demo_classify(headline)
         tr.final, tr.confidence = cat, conf
+        #check consistency without replacing the first decision
+        if conf < 0.6:
+            try:
+                if tr.mode == "live":
+                    second, second_conf = _groq_classify(headline, config.SYSTEM_PROMPT, tr.passages)
+                else:
+                    second, second_conf = _demo_classify(headline)
+                tr.second_answer, tr.second_confidence = second, second_conf
+                if cat in CATS and second in CATS:
+                    tr.agreed = cat == second
+            except Exception:
+                #do not expose provider errors or bypass the first answer's guardrails
+                tr.consistency_error = "second classification failed"
 
     tr.raw_answer = tr.final
     tr.guardrails = check(tr.final, tr.confidence, tr.branch)
@@ -269,6 +286,9 @@ def score(golden):
                      "branch": tr.branch, "confidence": tr.confidence})
         preds.append(tr.final)
         truth.append(g["label"])
+        #pace hosted scoring to reduce bursts of live requests
+        if live_mode():
+            time.sleep(4)
     correct = sum(r["ok"] for r in rows)
     k = cohen_kappa_score(truth, preds) if len(set(truth)) > 1 else 0.0
     return {"rows": rows, "correct": correct, "total": len(rows),
