@@ -128,6 +128,7 @@ def test_consistency_does_not_bypass_guardrails(monkeypatch, first):
 
 
 def test_second_call_failure_keeps_guardrails(monkeypatch):
+    monkeypatch.setattr(config, "CONFIDENCE_FLOOR", 0.8)
     calls = []
     def fake_model(*args):
         calls.append(args)
