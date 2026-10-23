@@ -1,0 +1,50 @@
+[
+  {
+    "id": 39903637695,
+    "head_sha": "db0d70641e19aeabb827981ed3f38abf0399d444",
+    "head_branch": "codex/week2-hosted-baseline",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39903637695"
+  },
+  {
+    "id": 39903614365,
+    "head_sha": "11ca8f0c15e5a6884fb9c236ad835f3b9a6411e6",
+    "head_branch": "week2-developer",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39903614365"
+  },
+  {
+    "id": 39903204764,
+    "head_sha": "a9457b437183c3b58671a5b9c1b45ed3e5614f6c",
+    "head_branch": "week2-developer",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39903204764"
+  },
+  {
+    "id": 39895046769,
+    "head_sha": "f8fc8933d009f8ae91a92d9d9082dc77ba6ee48e",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39895046769"
+  },
+  {
+    "id": 39895014912,
+    "head_sha": "2b36873381d97d6815aa0376f53d74baa2dec5d1",
+    "head_branch": "week2-developer",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39895014912"
+  },
+  {
+    "id": 39894431060,
+    "head_sha": "2b36873381d97d6815aa0376f53d74baa2dec5d1",
+    "head_branch": "week2-developer",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ahthini/Ahthini-LSA-AI-ML/actions/runs/39894431060"
+  }
+]

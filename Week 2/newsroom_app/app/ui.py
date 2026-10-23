@@ -35,6 +35,18 @@ def do_classify(headline):
             trace.append(f"- `{p['file']}` / {p['heading']}  (score {p['score']})")
     else:
         trace.append("- none scored above the threshold")
+    trace += ["", "**Consistency check**"]
+    if tr.second_answer is not None:
+        outcome = "agreed" if tr.agreed is True else "disagreed" if tr.agreed is False else "unavailable"
+        #show category names only, never an unsafe second reply
+        first = tr.raw_answer if tr.raw_answer in engine.CATS else "invalid category"
+        second = tr.second_answer if tr.second_answer in engine.CATS else "invalid category"
+        trace.append(f"- {outcome}: first {first} ({tr.confidence:.2f}), "
+                     f"second {second} ({tr.second_confidence:.2f})")
+    elif tr.consistency_error:
+        trace.append("- unavailable: second classification failed")
+    else:
+        trace.append("- not needed for this request")
     trace += ["", "**Guardrails**"]
     for g in tr.guardrails:
         trace.append(f"- {'PASS' if g['passed'] else 'FAIL'}  {g['name']} — {g['detail']}")

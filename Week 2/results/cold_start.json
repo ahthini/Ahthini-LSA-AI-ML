@@ -1,0 +1,10 @@
+{
+  "url": "https://ahthini-newsroom-triage.onrender.com",
+  "seconds": 75.023,
+  "lower_bound_seconds": 51.415,
+  "upper_bound_seconds": 75.023,
+  "measured_at": "2026-10-23T08:59:40.666Z",
+  "measurement": "browser reload after idle until app observed ready",
+  "sleep_evidence": "Render Application loading and SERVICE WAKING UP",
+  "limitation": "polling observation: still loading at 51.4s, ready by 75.0s; includes browser and observation overhead, not inference"
+}

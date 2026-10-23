@@ -1,0 +1,11 @@
+{
+  "version": "live_v3",
+  "commit": "a9457b437183c3b58671a5b9c1b45ed3e5614f6c",
+  "url": "https://ahthini-newsroom-triage.onrender.com",
+  "correct": 25,
+  "total": 30,
+  "accuracy": 0.8333333333333334,
+  "kappa": 0.7829,
+  "source": "hosted Scoring page",
+  "observed_at": "2026-10-23T08:57:58.801Z"
+}
