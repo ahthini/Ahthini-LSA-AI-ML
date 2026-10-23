@@ -1,0 +1,1605 @@
+{
+  "version": "live_v0_tokens",
+  "change": "increase response token limit from 80 to 1024",
+  "mode": "live",
+  "created_at": "2026-10-22T11:54:38.852326+00:00",
+  "correct": 22,
+  "total": 30,
+  "accuracy": 0.7333333333333333,
+  "kappa": 0.6511627906976745,
+  "model": "openai/gpt-oss-120b",
+  "config_sha256": "970b5fb4398c0fadb3cac8f4f356e584e89cecb7c7565de0ab5274b759fc6931",
+  "config": "\"\"\"\n==============================================================================\n\n  THIS IS THE ONLY FILE YOU NEED TO CHANGE.\n\n  Everything below is written in plain English. You are allowed to change\n  any of it. You are not expected to understand the rest of the project.\n\n  There are four things here:\n\n     1. SYSTEM_PROMPT    what the assistant is told to do\n     2. ROUTING_RULES    which kind of question goes down which branch\n     3. GUARDRAILS       what the assistant must refuse to do\n     4. SETTINGS         a few numbers you can turn up and down\n\n  After you change something, run the app again and look at the Scoring\n  page. If the number went up, your change helped. If it went down, it\n  did not. That is the whole job.\n\n==============================================================================\n\"\"\"\n\n# -----------------------------------------------------------------------------\n#  1. SYSTEM_PROMPT\n#     The instructions the assistant follows. This one is deliberately poor.\n#     Improving it is your main task.\n# -----------------------------------------------------------------------------\n\nSYSTEM_PROMPT = \"\"\"\nYou sort news. Say which category it is.\n\"\"\"\n\n\n# -----------------------------------------------------------------------------\n#  2. ROUTING_RULES\n#     Before the model is asked anything, the app checks this list.\n#     If a phrase on the left appears in the question, it goes down that branch.\n#     Branches are: \"classify\", \"explain\", \"refuse\".\n#     Rules are checked from the top down. The first match wins.\n# -----------------------------------------------------------------------------\n\nROUTING_RULES = [\n    (\"why did you\",        \"explain\"),\n    (\"explain\",            \"explain\"),\n    (\"how confident\",      \"explain\"),\n    (\"ignore your\",        \"refuse\"),\n    (\"your instructions\",  \"refuse\"),\n]\n\n\n# -----------------------------------------------------------------------------\n#  3. GUARDRAILS\n#     Checked AFTER the model answers. If any of these fail, the answer is\n#     replaced with a safe message instead of being shown.\n# -----------------------------------------------------------------------------\n\n# The assistant must never claim to be a person.\nBANNED_PHRASES = [\n    \"as a human\",\n    \"i am a person\",\n]\n\n# The assistant must only ever answer with one of these four words.\nALLOWED_CATEGORIES = [\"World\", \"Sports\", \"Business\", \"Sci/Tech\"]\n\n# If the model is less sure than this, the app says it does not know\n# instead of guessing. 0.0 means never refuse. 1.0 means always refuse.\nCONFIDENCE_FLOOR = 0.0\n\n\n# -----------------------------------------------------------------------------\n#  4. SETTINGS\n# -----------------------------------------------------------------------------\n\n# Which documents in the knowledge folder the app may read from.\n# Add a file to app/knowledge/ and add its name here to switch it on.\nKNOWLEDGE_FILES = [\n    \"categories.md\",\n]\n\n# How many pieces of a document the app is allowed to show the model.\nKNOWLEDGE_PASSAGES = 2\n\n# How sure a keyword match has to be before a passage counts as relevant.\nKNOWLEDGE_THRESHOLD = 0.10\n\nMODEL = \"openai/gpt-oss-120b\"\nTEMPERATURE = 0\n",
+  "traces": [
+    {
+      "id": 1,
+      "expected": "Sports",
+      "headline": "Gerrard only a 50-50 chance VIENNA - England midfielder Steven Gerrard is a major doubt to face Austria in today #39;s opening 2006 World Cup qualifier. Gerrard has failed to shake off a groin injury suffered in training on Thursday and",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "World",
+          "text": "International news, politics, conflict, disasters, national affairs and diplomacy. A foreign company's earnings or a currency move is Business, not World, even though it happens abroad.",
+          "score": 0.981
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.95,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.95 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 758
+    },
+    {
+      "id": 2,
+      "expected": "World",
+      "headline": "A Better Solution for Israel The hysterical tone of Daniel Seidemann #39;s plea to the next US administration to save Israel from itself serves no useful purpose op-ed, Aug. 26.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.95,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.95 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 568
+    },
+    {
+      "id": 3,
+      "expected": "Sports",
+      "headline": "Olympic Daily Preview - Thursday, August 19 Athens, Greece (Sports Network) - Wednesday night it was Paul Hamm #39;s turn to shine for the United States, as he won the gold medal in the men #39;s all-around competition. Will Thursday produce a sweep for the US at the Olympics? ...",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 507
+    },
+    {
+      "id": 4,
+      "expected": "Sports",
+      "headline": "US men #39;s basketball routs Angola Athens, Greece (Sports Network) - Tim Duncan led a balanced American attack with 15 points and seven rebounds, as the United States men #39;s basketball team completed the preliminary round with a resounding 89-53 victory over winless Angola.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.834
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 540
+    },
+    {
+      "id": 5,
+      "expected": "Sports",
+      "headline": "Italy: Sicilian derby ends in draw PALERMO, Nov 11 (SW) - After a 39-year wait for a Serie A Sicilian derby, the match between Palermo and Messina on Thursday managed only a 0-0 draw.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 660
+    },
+    {
+      "id": 6,
+      "expected": "Sci/Tech",
+      "headline": "5 of arthritis patients in Singapore take Bextra or Celebrex &lt;b&gt;...&lt;/b&gt; SINGAPORE : Doctors in the United States have warned that painkillers Bextra and Celebrex may be linked to major cardiovascular problems and should not be prescribed.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sports",
+          "text": "Matches, results, athletes, teams, transfers and tournaments. A broadcasting rights deal or a club's finances is Business, not Sports, even though it is about a sports organisation.",
+          "score": 0.612
+        },
+        {
+          "file": "categories.md",
+          "heading": "World",
+          "text": "International news, politics, conflict, disasters, national affairs and diplomacy. A foreign company's earnings or a currency move is Business, not World, even though it happens abroad.",
+          "score": 0.588
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.9,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.90 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 1278
+    },
+    {
+      "id": 7,
+      "expected": "World",
+      "headline": "Prince Charles chastised for quot;old fashioned quot; views A minister has launched a scathing attack on heir to the throne Prince Charles, accusing him of being quot;very old fashioned quot; and out of touch in his views on teaching in schools.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.97,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.97 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 710
+    },
+    {
+      "id": 8,
+      "expected": "Business",
+      "headline": "Dollar Idles vs. Euro Before U.S. Data LONDON (Reuters) - The dollar kept close to the previous session's one-week highs against the euro on Thursday, holding steady as investors awaited U.S. data to confirm fresh signs of strength in U.S. manufacturing.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.688
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.426
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 849
+    },
+    {
+      "id": 9,
+      "expected": "Sci/Tech",
+      "headline": "Infineon to Pay a Fine in the Fixing Of Chip Prices Federal prosecutors announced on Wednesday that they had cracked a global cartel that had illegally fixed prices of memory chips in personal computers and servers for",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 580
+    },
+    {
+      "id": 10,
+      "expected": "Sci/Tech",
+      "headline": "Images: Nintendo grows up--a little The Nintendo DS includes a touch-sensitive screen and is geared for an older crowd.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.834
+        }
+      ],
+      "raw_answer": "Sci/Tech",
+      "confidence": 0.95,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.95 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sci/Tech",
+      "mode": "live",
+      "ms": 840
+    },
+    {
+      "id": 11,
+      "expected": "Sports",
+      "headline": "Berlin ties Miami mark RALEIGH, N.C. -- Brock Berlin tied a Miami record shared by Bernie Kosar, Steve Walsh, and Ken Dorsey with five touchdown passes, and Devin Hester returned the opening kickoff 100 yards for another score, helping the No. 4 Hurricanes hold off North Carolina State, 45-31, last night.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 710
+    },
+    {
+      "id": 12,
+      "expected": "World",
+      "headline": "National Guard HQ attacked near Baghdad A mortar attack on an Iraqi National Guard headquarters north of Baghdad killed at least four National Guards and injured 80 others, officials said Tuesday.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "World",
+          "text": "International news, politics, conflict, disasters, national affairs and diplomacy. A foreign company's earnings or a currency move is Business, not World, even though it happens abroad.",
+          "score": 0.588
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.426
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 586
+    },
+    {
+      "id": 13,
+      "expected": "Sports",
+      "headline": "Three Hold First-Round Lead at SFB Classic (AP) AP - John Senden closed his 7-under 65 with his second eagle of the round and shared the lead with Harrison Frazar and Glen Day after the first round of the Southern Farm Bureau Classic on Thursday.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.426
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.417
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 560
+    },
+    {
+      "id": 14,
+      "expected": "Sci/Tech",
+      "headline": "Australia amp; New Zealand Amphibians such as leopard frogs and salamanders are threatened with extinction as their homes dry up and a new disease spreads, possibly as a result of global warming, according to a new study in Science magazine.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.426
+        }
+      ],
+      "raw_answer": "Sci/Tech",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sci/Tech",
+      "mode": "live",
+      "ms": 736
+    },
+    {
+      "id": 15,
+      "expected": "Sci/Tech",
+      "headline": "Pioneer replaces plasma TV power supplies Certain Pioneer TVs have a faulty power supply. An upgrade is available.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.426
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.417
+        }
+      ],
+      "raw_answer": "Sci/Tech",
+      "confidence": 0.78,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.78 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sci/Tech",
+      "mode": "live",
+      "ms": 1121
+    },
+    {
+      "id": 16,
+      "expected": "Business",
+      "headline": "Cocoa prices down but Ivorian exports still blocked World cocoa prices were down on Tuesday but off the day #39;s lows as exports remained on hold after mob violence and military clashes in Ivory Coast, the key global supplier, traders said.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.626
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 1186
+    },
+    {
+      "id": 17,
+      "expected": "World",
+      "headline": "China 'Deeply Concerned' at Japan's Defense Move SHANGHAI (Reuters) - China voiced deep concern on Saturday over Japan's sweeping overhaul of defense policy that eased a decades-old ban on arms exports and suggested a shift from a defensive posture in place since its World War II defeat.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "World",
+          "text": "International news, politics, conflict, disasters, national affairs and diplomacy. A foreign company's earnings or a currency move is Business, not World, even though it happens abroad.",
+          "score": 0.981
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.853
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.97,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.97 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 619
+    },
+    {
+      "id": 18,
+      "expected": "Business",
+      "headline": "Shock Jock Group Boosts Satellite Radio Profile When radio shock jocks Opie and Anthony considered their next career move after two firings in four years, the twisted twosome was ready to feign rehabilitation. Or at least that was the plan when they sat down with satellite radio executives.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.918
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.92,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.92 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 569
+    },
+    {
+      "id": 19,
+      "expected": "Sci/Tech",
+      "headline": "NOVA, BP to Form Joint Venture NOVA Chemicals Corp. said Tuesday it has agreed to form a joint venture with BP PLC to manufacture and market styrenic polymers in Europe.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sports",
+          "text": "Matches, results, athletes, teams, transfers and tournaments. A broadcasting rights deal or a club's finances is Business, not Sports, even though it is about a sports organisation.",
+          "score": 0.612
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.97,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.97 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 642
+    },
+    {
+      "id": 20,
+      "expected": "World",
+      "headline": "World Population to Rise to 8.9 Billion Although world families are getting smaller in many regions, the 50 poorest countries are expected to triple in size to 1.7 billion people by 2050, posing many challenges for world countries.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.688
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.97,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.97 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 780
+    },
+    {
+      "id": 21,
+      "expected": "World",
+      "headline": "Old Rumors of Gay Sex Prove Powerful on Web Va. GOP members chose Del. Thelma Drake (Norfolk) to replace Rep. Edward L. Schrock after he resigned amidst allegations Schrock indulged in or solicited gay sex.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.229
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sports",
+          "text": "Matches, results, athletes, teams, transfers and tournaments. A broadcasting rights deal or a club's finances is Business, not Sports, even though it is about a sports organisation.",
+          "score": 0.204
+        }
+      ],
+      "raw_answer": "UNPARSED",
+      "confidence": 0.0,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": false,
+          "detail": "UNPARSED",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.00 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": true,
+      "final": "I am not able to answer that one.",
+      "mode": "live",
+      "ms": 708
+    },
+    {
+      "id": 22,
+      "expected": "Sci/Tech",
+      "headline": "IDC: Software sales to hit \\$189 billion The market researcher has predicted a 6.2 percent increase in software revenues during 2004.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.459
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 499
+    },
+    {
+      "id": 23,
+      "expected": "Business",
+      "headline": "Qantas wants better tax treatment MARK COLVIN: Qantas might have posted yet another record profit, but the national carrier #39;s boss, Geoff Dixon, claims earnings are being hampered by unfair subsidies for international carriers allowed to fly in and out of Australia.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "World",
+          "text": "International news, politics, conflict, disasters, national affairs and diplomacy. A foreign company's earnings or a currency move is Business, not World, even though it happens abroad.",
+          "score": 0.981
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.834
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 542
+    },
+    {
+      "id": 24,
+      "expected": "World",
+      "headline": "In Controversial Move, Britain Says #39;Yes #39; to Troop-Redeployment &lt;b&gt;...&lt;/b&gt; Some 850 British troops have started preparations to redeploy from southern Iraq to an area outside of Baghdad. The move comes after Britain agreed to a US request for help and is designed to make more US",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 1.066
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.853
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.97,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.97 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 881
+    },
+    {
+      "id": 25,
+      "expected": "World",
+      "headline": "Putin praises Ukraine #39;s leader Russian President Vladimir Putin has taken part in a live phone-in on Ukrainian TV, just days before the country #39;s presidential election.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.64
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.626
+        }
+      ],
+      "raw_answer": "World",
+      "confidence": 0.95,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.95 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "5 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "World",
+      "mode": "live",
+      "ms": 896
+    },
+    {
+      "id": 26,
+      "expected": "Sports",
+      "headline": "Sluman, Byrd split lead; many bubbles burst Jeff Sluman and Jonathan Byrd were tied for the lead at the Chrysler Championship, both knowing the tournament really doesn #39;t start until the weekend.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.426
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 0.426
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 887
+    },
+    {
+      "id": 27,
+      "expected": "Sports",
+      "headline": "Soccer Coach Raymond Goethals Dies at 83 (AP) AP - Raymond Goethals, the Belgian soccer coach who led Olympique Marseille to the 1993 European Champions Cup title, died Monday, according to news reports. He was 83.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.426
+        },
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.229
+        }
+      ],
+      "raw_answer": "Sports",
+      "confidence": 0.99,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.99 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "6 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sports",
+      "mode": "live",
+      "ms": 736
+    },
+    {
+      "id": 28,
+      "expected": "Sports",
+      "headline": "SAN FRANCISCO Mission District cyclist blew whistle on flawed lock The triumph last week of the Bic pen over expensive, state-of-the-art steel locks has panicked the bicycling community, and churned Internet rumor mills about how much the lock manufacturer knew and when the company knew it.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "When two fit",
+          "text": "Choose the one the item is mostly about, judged by the headline rather than by one word buried in the description.",
+          "score": 0.688
+        },
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.64
+        }
+      ],
+      "raw_answer": "Sci/Tech",
+      "confidence": 0.7,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.70 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sci/Tech",
+      "mode": "live",
+      "ms": 1268
+    },
+    {
+      "id": 29,
+      "expected": "Sci/Tech",
+      "headline": "Siemens Says Cellphone Flaw May Hurt Users and Its Profit Siemens, the world #39;s fourth-largest maker of mobile phones, said Friday that a software flaw that can create a piercing ring in its newest phone models might hurt earnings in its handset division.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 1.251
+        },
+        {
+          "file": "categories.md",
+          "heading": "Sci/Tech",
+          "text": "Science, research, technology, software, space and health research. A new chip's speed is Sci/Tech. The money the chipmaker made from it is Business.",
+          "score": 1.066
+        }
+      ],
+      "raw_answer": "Business",
+      "confidence": 0.93,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.93 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Business",
+      "mode": "live",
+      "ms": 953
+    },
+    {
+      "id": 30,
+      "expected": "Sci/Tech",
+      "headline": "Microsoft Issues IE Patch (Article Central) Microsoft released its October batch of security advisories this week, with a number of quot;critical quot; patches, including a significant fix for the Internet Explorer browser.",
+      "branch": "classify",
+      "why_branch": "no rule matched, so the default branch was used",
+      "passages": [
+        {
+          "file": "categories.md",
+          "heading": "Category rules",
+          "text": "These are the published rules for the four AG News categories. The assistant may quote from this file when it explains a decision.",
+          "score": 0.853
+        },
+        {
+          "file": "categories.md",
+          "heading": "Business",
+          "text": "Companies, markets, earnings, the economy, trade, jobs and deals. A technology company's share price is Business. Its product's technical capability is Sci/Tech.",
+          "score": 0.626
+        }
+      ],
+      "raw_answer": "Sci/Tech",
+      "confidence": 0.96,
+      "guardrails": [
+        {
+          "name": "no banned phrase",
+          "passed": true,
+          "detail": "none found",
+          "blocking": true
+        },
+        {
+          "name": "answer is one of the four",
+          "passed": true,
+          "detail": "yes",
+          "blocking": true
+        },
+        {
+          "name": "confident enough",
+          "passed": true,
+          "detail": "0.96 against floor 0.00",
+          "blocking": true
+        },
+        {
+          "name": "answer is not empty",
+          "passed": true,
+          "detail": "8 characters",
+          "blocking": true
+        }
+      ],
+      "blocked": false,
+      "final": "Sci/Tech",
+      "mode": "live",
+      "ms": 688
+    }
+  ]
+}

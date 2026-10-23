@@ -1,0 +1,49 @@
+exit code: 1
+[31mF[0m[31mF[0m[31mF[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31m                                                        [100%][0m
+=================================== FAILURES ===================================
+[31m[1m____________________ test_prompt_names_all_four_categories _____________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_prompt_names_all_four_categories[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[FAILS UNTIL YOU FIX IT] The prompt must name all four categories."""[39;49;00m[90m[39;49;00m
+        p = config.SYSTEM_PROMPT[90m[39;49;00m
+        missing = [c [94mfor[39;49;00m c [95min[39;49;00m CATS [94mif[39;49;00m c.lower() [95mnot[39;49;00m [95min[39;49;00m p.lower()][90m[39;49;00m
+>       [94massert[39;49;00m [95mnot[39;49;00m missing, [33mf[39;49;00m[33m"[39;49;00m[33myour prompt never mentions: [39;49;00m[33m{[39;49;00mmissing[33m}[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+[1m[31mE       AssertionError: your prompt never mentions: ['World', 'Sports', 'Business', 'Sci/Tech'][0m
+[1m[31mE       assert not ['World', 'Sports', 'Business', 'Sci/Tech'][0m
+
+[1m[31mtests/test_config.py[0m:24: AssertionError
+[31m[1m___________________ test_prompt_says_what_to_do_when_two_fit ___________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_prompt_says_what_to_do_when_two_fit[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[FAILS UNTIL YOU FIX IT] The prompt must give a tie-break rule."""[39;49;00m[90m[39;49;00m
+        p = config.SYSTEM_PROMPT.lower()[90m[39;49;00m
+        signals = [[33m"[39;49;00m[33mif two[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mboth fit[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mtie[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mmostly about[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mchoose the one[39;49;00m[33m"[39;49;00m,[90m[39;49;00m
+                   [33m"[39;49;00m[33mmore than one[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mclosest[39;49;00m[33m"[39;49;00m][90m[39;49;00m
+        found = [s [94mfor[39;49;00m s [95min[39;49;00m signals [94mif[39;49;00m s [95min[39;49;00m p][90m[39;49;00m
+>       [94massert[39;49;00m found, ([90m[39;49;00m
+            [33m"[39;49;00m[33myour prompt does not say what to do when an item fits two categories. [39;49;00m[33m"[39;49;00m[90m[39;49;00m
+            [33m"[39;49;00m[33mWithout that rule the model picks differently every time.[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+        )[90m[39;49;00m
+[1m[31mE       AssertionError: your prompt does not say what to do when an item fits two categories. Without that rule the model picks differently every time.[0m
+[1m[31mE       assert [][0m
+
+[1m[31mtests/test_config.py[0m:33: AssertionError
+[31m[1m___________________ test_a_confidence_floor_has_been_chosen ____________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_a_confidence_floor_has_been_chosen[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[FAILS UNTIL YOU FIX IT] You must decide when the app should not guess."""[39;49;00m[90m[39;49;00m
+>       [94massert[39;49;00m config.CONFIDENCE_FLOOR > [94m0[39;49;00m, ([90m[39;49;00m
+            [33m"[39;49;00m[33mCONFIDENCE_FLOOR is still 0.00, which means the app will never admit [39;49;00m[33m"[39;49;00m[90m[39;49;00m
+            [33m"[39;49;00m[33mit does not know. Pick a number you can defend.[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+        )[90m[39;49;00m
+[1m[31mE       AssertionError: CONFIDENCE_FLOOR is still 0.00, which means the app will never admit it does not know. Pick a number you can defend.[0m
+[1m[31mE       assert 0.0 > 0[0m
+[1m[31mE        +  where 0.0 = config.CONFIDENCE_FLOOR[0m
+
+[1m[31mtests/test_config.py[0m:41: AssertionError
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m tests/test_config.py::[1mtest_prompt_names_all_four_categories[0m - AssertionError: your prompt never mentions: ['World', 'Sports', 'Business',...
+[31mFAILED[0m tests/test_config.py::[1mtest_prompt_says_what_to_do_when_two_fit[0m - AssertionError: your prompt does not say what to do when an item fits two c...
+[31mFAILED[0m tests/test_config.py::[1mtest_a_confidence_floor_has_been_chosen[0m - AssertionError: CONFIDENCE_FLOOR is still 0.00, which means the app will ne...
+[31m[31m[1m3 failed[0m, [32m14 passed[0m[31m in 0.63s[0m[0m
+

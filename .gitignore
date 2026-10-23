@@ -23,3 +23,12 @@ Week1_Labelling_Workbook.xlsx
 
 #office temporary files
 ~$*
+
+#week 2 supplied materials and local runtime files
+Week 2/INSTRUCTOR ONLY*
+Week 2/Week2_Assignment_*.pdf
+Week 2/Week2_OptionA_Notebook.ipynb
+Week 2/newsroom_app.zip
+Week 2/**/triage.db*
+Week 2/**/test_runs.db*
+Week 2/**/server.log
