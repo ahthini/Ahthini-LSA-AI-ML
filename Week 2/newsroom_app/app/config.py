@@ -27,8 +27,7 @@
 # -----------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """
-You sort news. Say which category it is: World, Sports, Business or Sci/Tech.
-If two categories fit, choose the category the headline is mostly about rather than an incidental keyword.
+You sort news. Say which category it is.
 """
 
 
@@ -66,7 +65,7 @@ ALLOWED_CATEGORIES = ["World", "Sports", "Business", "Sci/Tech"]
 
 # If the model is less sure than this, the app says it does not know
 # instead of guessing. 0.0 means never refuse. 1.0 means always refuse.
-CONFIDENCE_FLOOR = 0.80
+CONFIDENCE_FLOOR = 0.0
 
 
 # -----------------------------------------------------------------------------
