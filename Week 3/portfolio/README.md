@@ -75,3 +75,9 @@ tests/              36 unit tests plus the evaluation harness
 
 This becomes a public URL. Your email is enough. Leave your phone number and
 your home address out of `content/`.
+
+## Internship deployment
+
+Vercel project: `ahthini-portfolio`. Production branch: `codex/week3-retrieve-well`.
+Project root: `Week 3/portfolio`. Framework preset: Other, with build and output overrides unset.
+The Groq key is stored as a production environment secret in Vercel.
