@@ -25,7 +25,7 @@ Open `week3.ipynb` in VS Code and select the shared `LSA-internship/.venv` kerne
 From the internship folder, run:
 
 ```bash
-cd "Week 3/portfolio"
+cd "Week-3/portfolio"
 "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node" dev.js
 ```
 
@@ -33,6 +33,6 @@ Open http://localhost:3000. Stop with Ctrl+C. The explicit path uses the install
 
 ## Next checkpoint
 
-Commit the starting point and deploy the sample app on Vercel, with root directory `Week 3/portfolio`. Then personalise the five notes and the expected answers before comparing retrieval methods. Keep the same personalised question set across those comparisons.
+Commit the starting point and deploy the sample app on Vercel, with root directory `Week-3/portfolio`. Then personalise the five notes and the expected answers before comparing retrieval methods. Keep the same personalised question set across those comparisons.
 
 Supplied participant materials and instructor-only files stay local and are excluded from Git.

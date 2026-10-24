@@ -34,10 +34,10 @@ Week 2/**/test_runs.db*
 Week 2/**/server.log
 
 #week 3 supplied materials and local runtime files
-Week 3/1_Assignments_for_participants/
-Week 3/2_Starter_files_for_participants/
-Week 3/3_Instructor_only/
-Week 3/READ_ME_FIRST.txt
-Week 3/**/node_modules/
-Week 3/**/.vercel/
-Week 3/**/server.log
+Week-3/1_Assignments_for_participants/
+Week-3/2_Starter_files_for_participants/
+Week-3/3_Instructor_only/
+Week-3/READ_ME_FIRST.txt
+Week-3/**/node_modules/
+Week-3/**/.vercel/
+Week-3/**/server.log
