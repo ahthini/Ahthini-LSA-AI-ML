@@ -14,10 +14,9 @@ import { retrieve, buildContext, RETRIEVAL_METHOD } from "./lib/retrieve.js";
 const $ = (sel) => document.querySelector(sel);
 
 const SUGGESTED = [
-  "Where are you based?",
-  "What did chunking do for accuracy?",
-  "What is your notice period?",
-  "Who won the world cup?",
+  "What healthcare projects have you worked on?",
+  "What did you build during your internship?",
+  "Which tools have you used?",
 ];
 
 let CHUNKS = [];

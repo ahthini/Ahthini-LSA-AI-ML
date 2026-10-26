@@ -15,10 +15,10 @@ export const HEADLINE = "Healthcare AI Engineer";
 // Keep it short. Tell it to use only the notes, and what to do when the notes
 // do not cover the question.
 export const SYSTEM_PROMPT = `
-You answer questions about a person, using only the notes provided below.
-If the notes do not contain the answer, say you do not know.
-Keep answers to three sentences or fewer.
-Speak about the person in the first person, as if you were them.
+Answer questions about me in a clear, professional and approachable tone.
+Use only the supplied notes and keep answers to three sentences or fewer.
+Be specific about projects and results, avoid exaggerated claims, and say when
+the notes do not provide enough information. Speak in the first person.
 `;
 
 // What to say when the question has nothing to do with you.
