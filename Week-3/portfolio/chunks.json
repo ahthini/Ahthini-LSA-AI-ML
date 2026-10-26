@@ -1,96 +1,174 @@
 {
  "strategy": "heading",
- "built_at": "2026-10-23T13:35:38Z",
+ "built_at": "2026-10-26T06:14:51Z",
  "files": [
   "about.md",
   "experience.md",
   "projects.md",
-  "skills.md"
+  "skills.md",
+  "faq.md"
  ],
  "chunks": [
   {
    "file": "about.md",
-   "heading": "about",
-   "text": "I am Sample Person, an AI engineer. I build systems that put language models into production: retrieval pipelines, evaluation harnesses, and the plumbing that keeps them honest once real users arrive.\n\nI am based in Bangalore, India, and I work remotely. I am comfortable across the stack, but my centre of gravity is the backend: Python services, retrieval, and the measurement layer that tells you whether a change helped or hurt.\n\nBefore moving into AI work I spent three years as a full stack developer, which is where I learned that most production failures are boring: a missing index, a silent retry, a config value nobody reviewed.\n\nI studied computer science and finished with a focus on machine learning. My dissertation looked at how retrieval quality limits what a language model can do, which turned out to be the most useful thing I learned.\n\nWhat I want next is a role where the evaluation story matters as much as the demo. I am happiest on a team that measures things.",
+   "heading": "Background and interests",
+   "text": "Background and interests. I am Ahthini Aranan, an MSc Artificial Intelligence student at the University of Surrey. My background combines biomedical sciences, healthcare technologies and machine learning. I am interested in applying AI to healthcare and data, with attention to evaluation, explainability and reliability.",
    "id": "about-1",
-   "chars": 985
+   "chars": 321
+  },
+  {
+   "file": "about.md",
+   "heading": "Education",
+   "text": "Education. I am studying MSc Artificial Intelligence at the University of Surrey, which I started in February 2026. My CV lists an expected Distinction, rather than an awarded result. I hold an MSc Healthcare Technologies in the Medical AI pathway from King's College London, awarded with Distinction in 2026, and a BSc Biomedical Sciences with a 2:1 from Bangor University, awarded in 2024.",
+   "id": "about-2",
+   "chars": 391
+  },
+  {
+   "file": "about.md",
+   "heading": "Career interests",
+   "text": "Career interests. I am seeking opportunities in AI, data science and health-tech. My projects cover structured clinical data, clinical notes, biomedical imaging and natural language processing. I am also developing practical experience in API integration, deployment and evaluating language-model applications through the LSA internship.",
+   "id": "about-3",
+   "chars": 337
   },
   {
    "file": "experience.md",
-   "heading": "AI Engineer, Northwind Data (2024 to present)",
-   "text": "AI Engineer, Northwind Data (2024 to present). I own the retrieval layer of a customer support assistant that handles about four thousand conversations a week. When I joined, the assistant answered from a single flat prompt and nobody could say how often it was right.\n\nI built the first evaluation harness: a set of 120 labelled questions, scored automatically on every deploy. The first run told us we were at 61 percent. Within two months we were at 84 percent, and the thing that moved the number was not the model. It was chunking. Splitting documents on headings instead of on a fixed character count was worth 14 points on its own.\n\nI also added a refusal path. The assistant now says it does not know rather than inventing a policy, which cut escalations from the support team by a third.",
+   "heading": "University of Surrey research",
+   "text": "University of Surrey research. My research project at the University of Surrey began in March 2026 and is continuing for publication, as recorded in my CV. It investigates psychiatric readmission risk using structured electronic health records and clinical notes from MIMIC-IV. The work includes preprocessing, feature engineering, NLP, patient-level partitioning and leakage auditing.",
    "id": "experience-1",
-   "chars": 796
+   "chars": 385
   },
   {
    "file": "experience.md",
-   "heading": "Full Stack Developer, Harbour Systems (2021 to 2024)",
-   "text": "Full Stack Developer, Harbour Systems (2021 to 2024). I worked on an internal logistics dashboard used by about two hundred staff. Python on the back, React on the front, PostgreSQL underneath.\n\nThe work I am proudest of is unglamorous: I replaced a nightly batch job that regularly failed silently with an incremental pipeline that reported its own health. Support tickets about stale data went from roughly fifteen a month to almost none.\n\nI was also the person who introduced tests to that codebase. Not many, and not quickly, but enough that the next person could change things without fear.",
+   "heading": "LSA AI and Machine Learning internship",
+   "text": "LSA AI and Machine Learning internship. I started the London Success Academy AI and Machine Learning work placement in October 2026. Week 1 focused on label quality, agreement, model evaluation and failure analysis. Week 2 involved improving, testing and deploying a newsroom triage application. Week 3 is an ongoing portfolio chatbot project, exploring retrieval and how source notes influence answers.",
    "id": "experience-2",
-   "chars": 595
+   "chars": 403
   },
   {
    "file": "experience.md",
-   "heading": "Intern, Harbour Systems (2021)",
-   "text": "Intern, Harbour Systems (2021). Six months writing internal tooling. Mostly scripts. It taught me to read other people's code, which is most of the job.",
+   "heading": "King's College London research",
+   "text": "King's College London research. From May to October 2025, I worked on modelling coronary perfusion territories using CTCA and Voronoi subdivision. I developed a reproducible computational pipeline integrating CT segmentation obtained from deep learning methods, vessel skeletonisation and automated mesh cleaning.",
    "id": "experience-3",
-   "chars": 152
+   "chars": 313
+  },
+  {
+   "file": "experience.md",
+   "heading": "Leadership and earlier experience",
+   "text": "Leadership and earlier experience. I was Chairperson and Treasurer of Bangor Medical Science Society from 2022 to 2024, organising events, managing budgeting and securing sponsorships. I also worked as a Peer Guide and Course Representative in 2023 to 2024 and an Open Day Representative in 2023. Earlier experience includes customer service, care-home volunteering and dental shadowing.",
+   "id": "experience-4",
+   "chars": 387
   },
   {
    "file": "projects.md",
-   "heading": "News triage assistant",
-   "text": "News triage assistant. A classifier and triage app for news items. It sorts an item into one of four categories, decides whether a question needs explaining or refusing, retrieves a relevant note from a small knowledge base, and records every run so the behaviour can be scored afterwards.\n\nThe interesting part is the config file. The prompt, the routing rules, the guardrails and the retrieval settings all live in one place in plain language, so changing behaviour does not mean changing code. I built it that way after watching non-engineers be unable to contribute to a system they understood perfectly well.\n\nScored 56.7 percent accuracy with a Cohen's kappa of 0.42 on the first pass. After fixing the prompt to name all four categories and to say what to do when two categories both fit, it went to 83 percent.\n\nStack: Python, Gradio, SQLite, Groq.",
+   "heading": "Psychiatric readmission risk prediction",
+   "text": "Psychiatric readmission risk prediction. My psychiatric readmission research uses structured EHR data and clinical notes from MIMIC-IV. The pipeline covered 238,491 admissions from 107,926 patients, with patient-level data partitioning. Models compared included LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensembles. The final ensemble achieved ROC-AUC 0.8014 and PR-AUC 0.5965, as reported in my CV. Evaluation included SHAP, calibration, subgroup analysis, feature reduction and leakage auditing. These are research results, not evidence of deployment in clinical care.",
    "id": "projects-1",
-   "chars": 856
+   "chars": 601
   },
   {
    "file": "projects.md",
-   "heading": "Text classification from scratch",
-   "text": "Text classification from scratch. A news topic classifier built without a framework: hand labelling, inter annotator agreement, TF-IDF features, logistic regression, confusion matrix.\n\nTwo things surprised me. First, my own labels disagreed with a second labeller about one time in five, which puts a hard ceiling on any accuracy claim. Second, a deliberately leaky split scored 1.000 on a 200 row pool, which is how I learned to be suspicious of a perfect number.\n\nStack: Python, scikit-learn, pandas.",
+   "heading": "Coronary perfusion modelling",
+   "text": "Coronary perfusion modelling. My King's College London project modelled coronary perfusion territories using CTCA and Voronoi subdivision. The reproducible pipeline combined CT segmentation, vessel skeletonisation and mesh cleaning to investigate subendocardial territories. Tools included Python, PyVista, SciPy, NiBabel, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer.",
    "id": "projects-2",
-   "chars": 502
+   "chars": 376
   },
   {
    "file": "projects.md",
-   "heading": "This portfolio",
-   "text": "This portfolio. The site you are reading. A static page with a chat box that answers questions about me from my own notes. Retrieval runs in the browser, generation runs in a serverless function so the API key never reaches the client.\n\nStack: HTML, CSS, JavaScript, Vercel Functions, Groq.",
+   "heading": "NLP sentiment and sarcasm",
+   "text": "NLP sentiment and sarcasm. My NLP coursework used the BESSTIE-CW-26 dataset for both sentiment and sarcasm. In Week 1 of the LSA internship, I revisited label quality by manually labelling 30 validation texts for both tasks before comparing with dataset references. Sentiment agreement was 25/30, or 83.3%, with kappa 0.667. Sarcasm agreement was 27/30, or 90.0%, with kappa 0.609. These figures measure my label agreement with the references, not a trained model's performance.",
    "id": "projects-3",
-   "chars": 290
+   "chars": 478
+  },
+  {
+   "file": "projects.md",
+   "heading": "Week 1 news classification evaluation",
+   "text": "Week 1 news classification evaluation. I completed Option C, labelling 30 news items and comparing my labels with two AI prompts and official dataset labels. My labels matched the official labels on 22/30 items, or 73.3%, with kappa 0.643. Both AI prompts matched the official labels on 24/30 items, or 80.0%, with kappa 0.733. My agreement with the specific AI prompt was 25/30, or 83.3%, with kappa 0.779. Business and Sci/Tech were the most confused categories. I also explored data leakage, class imbalance, confidence intervals and robustness, and built a Gradio classifier interface.",
+   "id": "projects-4",
+   "chars": 589
+  },
+  {
+   "file": "projects.md",
+   "heading": "Week 2 newsroom triage application",
+   "text": "Week 2 newsroom triage application. I completed Option B, working on a newsroom triage app with classification, retrieval, guardrails and stored runs. Hosted evaluation against my 30 manual labels scored 21/30, or 70.0%, with kappa 0.6132 for the reconstructed original configuration. The improved prompt and confidence floor of 0.80 scored 25/30, or 83.3%, with kappa 0.7829. These were separate runs with multiple configuration differences, so the improvement cannot be attributed to one prompt sentence. The app used Python, Groq and SQLite and was deployed on Render. The feature tests recorded 30 passes.",
+   "id": "projects-5",
+   "chars": 609
+  },
+  {
+   "file": "projects.md",
+   "heading": "Week 3 portfolio chatbot",
+   "text": "Week 3 portfolio chatbot. I am working on Option B, a portfolio chatbot that retrieves passages from my notes and sends them to a language model. The starter application was deployed on Vercel and verified with a live Groq answer and an off-topic refusal. The starter's 49 tests passed. Personalisation and retrieval experiments are in progress, so I do not yet claim a measured retrieval improvement for my own content.",
+   "id": "projects-6",
+   "chars": 420
   },
   {
    "file": "skills.md",
-   "heading": "Languages",
-   "text": "Languages. Python is my main language and the one I am fastest in. JavaScript second, mostly for front ends and serverless functions. SQL well enough to read a query plan and fix the obvious problem.",
+   "heading": "Python and data analysis",
+   "text": "Python and data analysis. My tools include Python, pandas, NumPy, SciPy, Jupyter, scikit-learn and Matplotlib. I have used preprocessing, exploratory data analysis, feature engineering and model evaluation in healthcare and internship projects. I use VS Code and Git/GitHub for project development.",
    "id": "skills-1",
-   "chars": 199
+   "chars": 298
   },
   {
    "file": "skills.md",
-   "heading": "Retrieval and evaluation",
-   "text": "Retrieval and evaluation. Chunking strategies and why they matter more than people expect. Keyword versus dense retrieval, and when the cheaper one is good enough. Cosine similarity. Building labelled evaluation sets. Inter annotator agreement with Cohen's kappa. LLM as judge, including the part where you check the judge against human labels before trusting it.",
+   "heading": "Machine learning and explainability",
+   "text": "Machine learning and explainability. My research experience includes LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensemble comparisons. I have used SHAP, calibration, subgroup analysis and leakage auditing to examine model behaviour. PyTorch is also listed among my technical skills.",
    "id": "skills-2",
-   "chars": 363
+   "chars": 312
   },
   {
    "file": "skills.md",
-   "heading": "Infrastructure",
-   "text": "Infrastructure. Vercel and Render for deployment. PostgreSQL, including Neon. GitHub Actions for CI. Docker to the level of writing a working Dockerfile, not to the level of running a cluster.",
+   "heading": "NLP and retrieval",
+   "text": "NLP and retrieval. My work includes clinical notes and coursework on sentiment and sarcasm. My CV lists TF-IDF and RoBERTa. Through the internship, I have worked with prompts, structured model outputs, agreement metrics and retrieval. I am currently learning to compare chunking and retrieval strategies in the portfolio chatbot.",
    "id": "skills-3",
-   "chars": 192
+   "chars": 329
   },
   {
    "file": "skills.md",
-   "heading": "Models and tools",
-   "text": "Models and tools. Groq for inference. Langfuse for tracing and scoring. scikit-learn for classical baselines, which are still the right first move more often than not.",
+   "heading": "Biomedical imaging",
+   "text": "Biomedical imaging. My imaging tools include PyVista, VTK, NiBabel, SciPy, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer. My coronary perfusion research involved segmentation outputs, vessel skeletonisation, Voronoi subdivision and mesh cleaning.",
    "id": "skills-4",
-   "chars": 167
+   "chars": 253
   },
   {
    "file": "skills.md",
-   "heading": "What I am still learning",
-   "text": "What I am still learning. Agent frameworks beyond simple tool calling. I have built tool loops by hand and want to understand what the frameworks actually buy you. Also Kubernetes, which I keep deferring.",
+   "heading": "Application development",
+   "text": "Application development. The internship has given me practical experience with Groq APIs, Gradio interfaces, SQLite, automated tests, GitHub Actions and deployment to Render and Vercel. I am developing my JavaScript skills through the Week 3 portfolio project.",
    "id": "skills-5",
-   "chars": 204
+   "chars": 260
+  },
+  {
+   "file": "faq.md",
+   "heading": "What roles are you interested in?",
+   "text": "What roles are you interested in?. I am interested in opportunities in AI, data science and health-tech, particularly work involving healthcare data, machine learning and careful evaluation.",
+   "id": "faq-1",
+   "chars": 190
+  },
+  {
+   "file": "faq.md",
+   "heading": "What are you studying?",
+   "text": "What are you studying?. I am studying MSc Artificial Intelligence at the University of Surrey. I previously completed MSc Healthcare Technologies at King's College London with Distinction and BSc Biomedical Sciences at Bangor University with a 2:1.",
+   "id": "faq-2",
+   "chars": 248
+  },
+  {
+   "file": "faq.md",
+   "heading": "What is your notice period and availability?",
+   "text": "What is your notice period and availability?. My notice period is two weeks. An exact start date would need to be agreed directly.",
+   "id": "faq-3",
+   "chars": 130
+  },
+  {
+   "file": "faq.md",
+   "heading": "Where are you based and what working arrangements do you prefer?",
+   "text": "Where are you based and what working arrangements do you prefer?. I am based in Hampshire and prefer remote work. My relocation preferences are not specified in these notes.",
+   "id": "faq-4",
+   "chars": 173
+  },
+  {
+   "file": "faq.md",
+   "heading": "Which projects involve healthcare?",
+   "text": "Which projects involve healthcare?. My healthcare projects include psychiatric readmission risk prediction using MIMIC-IV and coronary perfusion modelling using CTCA and Voronoi subdivision. My CV also lists a group project on predicting and preventing gestational diabetes using machine learning.",
+   "id": "faq-5",
+   "chars": 297
   }
  ]
 }

@@ -1,32 +1,21 @@
 # Skills
 
-## Languages
+## Python and data analysis
 
-Python is my main language and the one I am fastest in. JavaScript second,
-mostly for front ends and serverless functions. SQL well enough to read a query
-plan and fix the obvious problem.
+My tools include Python, pandas, NumPy, SciPy, Jupyter, scikit-learn and Matplotlib. I have used preprocessing, exploratory data analysis, feature engineering and model evaluation in healthcare and internship projects. I use VS Code and Git/GitHub for project development.
 
-## Retrieval and evaluation
+## Machine learning and explainability
 
-Chunking strategies and why they matter more than people expect. Keyword versus
-dense retrieval, and when the cheaper one is good enough. Cosine similarity.
-Building labelled evaluation sets. Inter annotator agreement with Cohen's
-kappa. LLM as judge, including the part where you check the judge against human
-labels before trusting it.
+My research experience includes LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensemble comparisons. I have used SHAP, calibration, subgroup analysis and leakage auditing to examine model behaviour. PyTorch is also listed among my technical skills.
 
-## Infrastructure
+## NLP and retrieval
 
-Vercel and Render for deployment. PostgreSQL, including Neon. GitHub Actions
-for CI. Docker to the level of writing a working Dockerfile, not to the level
-of running a cluster.
+My work includes clinical notes and coursework on sentiment and sarcasm. My CV lists TF-IDF and RoBERTa. Through the internship, I have worked with prompts, structured model outputs, agreement metrics and retrieval. I am currently learning to compare chunking and retrieval strategies in the portfolio chatbot.
 
-## Models and tools
+## Biomedical imaging
 
-Groq for inference. Langfuse for tracing and scoring. scikit-learn for
-classical baselines, which are still the right first move more often than not.
+My imaging tools include PyVista, VTK, NiBabel, SciPy, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer. My coronary perfusion research involved segmentation outputs, vessel skeletonisation, Voronoi subdivision and mesh cleaning.
 
-## What I am still learning
+## Application development
 
-Agent frameworks beyond simple tool calling. I have built tool loops by hand
-and want to understand what the frameworks actually buy you. Also Kubernetes,
-which I keep deferring.
+The internship has given me practical experience with Groq APIs, Gradio interfaces, SQLite, automated tests, GitHub Actions and deployment to Render and Vercel. I am developing my JavaScript skills through the Week 3 portfolio project.

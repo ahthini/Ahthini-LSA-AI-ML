@@ -1,20 +1,13 @@
 # About
 
-I am Sample Person, an AI engineer. I build systems that put language models
-into production: retrieval pipelines, evaluation harnesses, and the plumbing
-that keeps them honest once real users arrive.
+## Background and interests
 
-I am based in Bangalore, India, and I work remotely. I am comfortable across
-the stack, but my centre of gravity is the backend: Python services, retrieval,
-and the measurement layer that tells you whether a change helped or hurt.
+I am Ahthini Aranan, an MSc Artificial Intelligence student at the University of Surrey. My background combines biomedical sciences, healthcare technologies and machine learning. I am interested in applying AI to healthcare and data, with attention to evaluation, explainability and reliability.
 
-Before moving into AI work I spent three years as a full stack developer, which
-is where I learned that most production failures are boring: a missing index, a
-silent retry, a config value nobody reviewed.
+## Education
 
-I studied computer science and finished with a focus on machine learning. My
-dissertation looked at how retrieval quality limits what a language model can
-do, which turned out to be the most useful thing I learned.
+I am studying MSc Artificial Intelligence at the University of Surrey, which I started in February 2026. My CV lists an expected Distinction, rather than an awarded result. I hold an MSc Healthcare Technologies in the Medical AI pathway from King's College London, awarded with Distinction in 2026, and a BSc Biomedical Sciences with a 2:1 from Bangor University, awarded in 2024.
 
-What I want next is a role where the evaluation story matters as much as the
-demo. I am happiest on a team that measures things.
+## Career interests
+
+I am seeking opportunities in AI, data science and health-tech. My projects cover structured clinical data, clinical notes, biomedical imaging and natural language processing. I am also developing practical experience in API integration, deployment and evaluating language-model applications through the LSA internship.

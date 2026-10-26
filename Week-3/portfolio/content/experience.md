@@ -1,34 +1,17 @@
 # Experience
 
-## AI Engineer, Northwind Data (2024 to present)
+## University of Surrey research
 
-I own the retrieval layer of a customer support assistant that handles about
-four thousand conversations a week. When I joined, the assistant answered from
-a single flat prompt and nobody could say how often it was right.
+My research project at the University of Surrey began in March 2026 and is continuing for publication, as recorded in my CV. It investigates psychiatric readmission risk using structured electronic health records and clinical notes from MIMIC-IV. The work includes preprocessing, feature engineering, NLP, patient-level partitioning and leakage auditing.
 
-I built the first evaluation harness: a set of 120 labelled questions, scored
-automatically on every deploy. The first run told us we were at 61 percent.
-Within two months we were at 84 percent, and the thing that moved the number
-was not the model. It was chunking. Splitting documents on headings instead of
-on a fixed character count was worth 14 points on its own.
+## LSA AI and Machine Learning internship
 
-I also added a refusal path. The assistant now says it does not know rather
-than inventing a policy, which cut escalations from the support team by a third.
+I started the London Success Academy AI and Machine Learning work placement in October 2026. Week 1 focused on label quality, agreement, model evaluation and failure analysis. Week 2 involved improving, testing and deploying a newsroom triage application. Week 3 is an ongoing portfolio chatbot project, exploring retrieval and how source notes influence answers.
 
-## Full Stack Developer, Harbour Systems (2021 to 2024)
+## King's College London research
 
-I worked on an internal logistics dashboard used by about two hundred staff.
-Python on the back, React on the front, PostgreSQL underneath.
+From May to October 2025, I worked on modelling coronary perfusion territories using CTCA and Voronoi subdivision. I developed a reproducible computational pipeline integrating CT segmentation obtained from deep learning methods, vessel skeletonisation and automated mesh cleaning.
 
-The work I am proudest of is unglamorous: I replaced a nightly batch job that
-regularly failed silently with an incremental pipeline that reported its own
-health. Support tickets about stale data went from roughly fifteen a month to
-almost none.
+## Leadership and earlier experience
 
-I was also the person who introduced tests to that codebase. Not many, and not
-quickly, but enough that the next person could change things without fear.
-
-## Intern, Harbour Systems (2021)
-
-Six months writing internal tooling. Mostly scripts. It taught me to read other
-people's code, which is most of the job.
+I was Chairperson and Treasurer of Bangor Medical Science Society from 2022 to 2024, organising events, managing budgeting and securing sponsorships. I also worked as a Peer Guide and Course Representative in 2023 to 2024 and an Open Day Representative in 2023. Earlier experience includes customer service, care-home volunteering and dental shadowing.

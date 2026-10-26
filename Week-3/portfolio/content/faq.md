@@ -1,30 +1,21 @@
 # Frequently asked
 
-## Are you looking for a new role?
+## What roles are you interested in?
 
-Yes. I am open to AI engineering roles, remote or hybrid, and I am particularly
-interested in teams where evaluation is taken seriously.
+I am interested in opportunities in AI, data science and health-tech, particularly work involving healthcare data, machine learning and careful evaluation.
 
-## Where are you based and can you work across time zones?
+## What are you studying?
 
-Bangalore, India. I work remotely and I overlap comfortably with European hours
-and the early part of the US east coast day.
+I am studying MSc Artificial Intelligence at the University of Surrey. I previously completed MSc Healthcare Technologies at King's College London with Distinction and BSc Biomedical Sciences at Bangor University with a 2:1.
 
-## What is your notice period?
+## What is your notice period and availability?
 
-Thirty days.
+My notice period is two weeks. An exact start date would need to be agreed directly.
 
-## Do you prefer backend or frontend work?
+## Where are you based and what working arrangements do you prefer?
 
-Backend. I can build a front end when one is needed and I am not afraid of CSS,
-but the work I do best is on the server and in the data.
+I am based in Hampshire and prefer remote work. My relocation preferences are not specified in these notes.
 
-## Can you share a reference?
+## Which projects involve healthcare?
 
-Yes, on request, from my current manager and from a colleague on the support
-team who used the assistant daily.
-
-## What are you not looking for?
-
-A role with no evaluation story, where success is measured by whether the demo
-impressed someone. I have done that and it does not end well.
+My healthcare projects include psychiatric readmission risk prediction using MIMIC-IV and coronary perfusion modelling using CTCA and Voronoi subdivision. My CV also lists a group project on predicting and preventing gestational diabetes using machine learning.

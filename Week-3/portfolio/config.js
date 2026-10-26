@@ -6,10 +6,10 @@
 // ===========================================================================
 
 // Your name, as it should appear on the page and in the chat answers.
-export const OWNER_NAME = "Sample Person";
+export const OWNER_NAME = "Ahthini Aranan";
 
 // One line under your name.
-export const HEADLINE = "AI Engineer";
+export const HEADLINE = "Healthcare AI Engineer";
 
 // The instruction given to the model before every answer.
 // Keep it short. Tell it to use only the notes, and what to do when the notes
@@ -29,13 +29,13 @@ export const OFF_TOPIC_REPLY =
 export const BANNED_PHRASES = ["as an ai", "i am a language model", "as a large language"];
 
 // Which files in content/ the chat is allowed to read.
-// NOTE: content/faq.md exists but is NOT in this list. Three of the test
-// questions in questions.json can only be answered from it.
+// Include the personalised FAQ alongside the background and project notes.
 export const CONTENT_FILES = [
   "about.md",
   "experience.md",
   "projects.md",
   "skills.md",
+  "faq.md",
 ];
 
 // How many passages to send to the model.

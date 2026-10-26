@@ -1,40 +1,25 @@
 # Projects
 
-## News triage assistant
+## Psychiatric readmission risk prediction
 
-A classifier and triage app for news items. It sorts an item into one of four
-categories, decides whether a question needs explaining or refusing, retrieves
-a relevant note from a small knowledge base, and records every run so the
-behaviour can be scored afterwards.
+My psychiatric readmission research uses structured EHR data and clinical notes from MIMIC-IV. The pipeline covered 238,491 admissions from 107,926 patients, with patient-level data partitioning. Models compared included LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensembles. The final ensemble achieved ROC-AUC 0.8014 and PR-AUC 0.5965, as reported in my CV. Evaluation included SHAP, calibration, subgroup analysis, feature reduction and leakage auditing. These are research results, not evidence of deployment in clinical care.
 
-The interesting part is the config file. The prompt, the routing rules, the
-guardrails and the retrieval settings all live in one place in plain language,
-so changing behaviour does not mean changing code. I built it that way after
-watching non-engineers be unable to contribute to a system they understood
-perfectly well.
+## Coronary perfusion modelling
 
-Scored 56.7 percent accuracy with a Cohen's kappa of 0.42 on the first pass.
-After fixing the prompt to name all four categories and to say what to do when
-two categories both fit, it went to 83 percent.
+My King's College London project modelled coronary perfusion territories using CTCA and Voronoi subdivision. The reproducible pipeline combined CT segmentation, vessel skeletonisation and mesh cleaning to investigate subendocardial territories. Tools included Python, PyVista, SciPy, NiBabel, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer.
 
-Stack: Python, Gradio, SQLite, Groq.
+## NLP sentiment and sarcasm
 
-## Text classification from scratch
+My NLP coursework used the BESSTIE-CW-26 dataset for both sentiment and sarcasm. In Week 1 of the LSA internship, I revisited label quality by manually labelling 30 validation texts for both tasks before comparing with dataset references. Sentiment agreement was 25/30, or 83.3%, with kappa 0.667. Sarcasm agreement was 27/30, or 90.0%, with kappa 0.609. These figures measure my label agreement with the references, not a trained model's performance.
 
-A news topic classifier built without a framework: hand labelling, inter
-annotator agreement, TF-IDF features, logistic regression, confusion matrix.
+## Week 1 news classification evaluation
 
-Two things surprised me. First, my own labels disagreed with a second labeller
-about one time in five, which puts a hard ceiling on any accuracy claim.
-Second, a deliberately leaky split scored 1.000 on a 200 row pool, which is how
-I learned to be suspicious of a perfect number.
+I completed Option C, labelling 30 news items and comparing my labels with two AI prompts and official dataset labels. My labels matched the official labels on 22/30 items, or 73.3%, with kappa 0.643. Both AI prompts matched the official labels on 24/30 items, or 80.0%, with kappa 0.733. My agreement with the specific AI prompt was 25/30, or 83.3%, with kappa 0.779. Business and Sci/Tech were the most confused categories. I also explored data leakage, class imbalance, confidence intervals and robustness, and built a Gradio classifier interface.
 
-Stack: Python, scikit-learn, pandas.
+## Week 2 newsroom triage application
 
-## This portfolio
+I completed Option B, working on a newsroom triage app with classification, retrieval, guardrails and stored runs. Hosted evaluation against my 30 manual labels scored 21/30, or 70.0%, with kappa 0.6132 for the reconstructed original configuration. The improved prompt and confidence floor of 0.80 scored 25/30, or 83.3%, with kappa 0.7829. These were separate runs with multiple configuration differences, so the improvement cannot be attributed to one prompt sentence. The app used Python, Groq and SQLite and was deployed on Render. The feature tests recorded 30 passes.
 
-The site you are reading. A static page with a chat box that answers questions
-about me from my own notes. Retrieval runs in the browser, generation runs in a
-serverless function so the API key never reaches the client.
+## Week 3 portfolio chatbot
 
-Stack: HTML, CSS, JavaScript, Vercel Functions, Groq.
+I am working on Option B, a portfolio chatbot that retrieves passages from my notes and sends them to a language model. The starter application was deployed on Vercel and verified with a live Groq answer and an off-topic refusal. The starter's 49 tests passed. Personalisation and retrieval experiments are in progress, so I do not yet claim a measured retrieval improvement for my own content.
