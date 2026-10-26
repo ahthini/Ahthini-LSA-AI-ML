@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I am studying my MSc in Artificial Intelligence at the University of Surrey, which I began in February 2026."
+  },
+  {
+    "id": 2,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I earned a Distinction for my MSc in Healthcare Technologies (Medical AI pathway) from King’s College London in 2026."
+  },
+  {
+    "id": 3,
+    "original_correct": false,
+    "normalised_correct": true,
+    "changed": true,
+    "answer": "My psychiatric readmission research uses the MIMIC‑IV dataset, which provides structured electronic health records and clinical notes."
+  },
+  {
+    "id": 4,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The final ensemble in my psychiatric readmission risk prediction project achieved a ROC‑AUC of 0.8014. This performance reflects the model’s ability to discriminate between readmission and non‑readmission cases across the validation set. (The result is reported in my CV and represents research findings, not a deployed clinical system.)"
+  },
+  {
+    "id": 5,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "For the coronary perfusion project I applied a Voronoi subdivision to the vessel models. This followed segmentation outputs and vessel skeletonisation, with subsequent mesh cleaning to finalize the geometry. The notes don’t specify any alternative subdivision methods."
+  },
+  {
+    "id": 6,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "My coursework on sentiment and sarcasm involved analyzing clinical notes, but the specific dataset used isn’t detailed in the notes I have. Therefore, I don’t have enough information to identify the exact dataset. If you have more context, I can provide a more precise answer."
+  },
+  {
+    "id": 7,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "In Week 1, my labels matched the specific AI prompt on 25 out of 30 items, giving an accuracy of 83.3 % (kappa 0.779) against the official dataset labels."
+  },
+  {
+    "id": 8,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved Week 2 newsroom‑triage configuration achieved a Cohen’s kappa of 0.7829. This result came from the run that used the refined prompt and a confidence floor of 0.80, scoring 25 out of 30 correct labels (83.3%)."
+  },
+  {
+    "id": 9,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved Week 2 newsroom‑triage configuration used a confidence floor of **0.80**. This setting helped raise the evaluation score to 25/30 (83.3%) with a kappa of 0.7829."
+  },
+  {
+    "id": 10,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I deployed the Week 2 newsroom triage application on Render. The deployment used Python, Groq, and SQLite. The notes don’t specify any other hosting environment."
+  },
+  {
+    "id": 11,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My notice period is two weeks, and an exact start date would need to be agreed directly."
+  },
+  {
+    "id": 12,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I am based in Hampshire and prefer remote work. (My relocation preferences are not specified in the notes.)"
+  },
+  {
+    "id": 13,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My group machine‑learning project focused on predicting and preventing gestational diabetes."
+  },
+  {
+    "id": 14,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 15,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 16,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 17,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The final ensemble model for my psychiatric readmission risk predictor achieved an ROC‑AUC of 0.8014. This result reflects the performance on the patient‑level split of the 238,491 admissions in my study."
+  },
+  {
+    "id": 18,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I’ve worked on sentiment and sarcasm analysis as part of my coursework, but the notes don’t specify the exact corpus I used for studying opinions and ironic language. If you need details about the dataset, I’d need to refer to the original project documentation."
+  },
+  {
+    "id": 19,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "The notes don’t specify which hosting service was used for the newsroom triage application I worked on during week 2 of my LSA AI and Machine Learning internship. If you have more details or a specific platform in mind, I can try to clarify further."
+  },
+  {
+    "id": 20,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My coronary perfusion model is built on a Voronoi subdivision of the coronary artery tree. I integrate CT segmentation from deep‑learning methods, then skeletonise the vessels and apply the Voronoi partition to define perfusion territories. This geometric approach provides a reproducible computational pipeline for mapping blood supply."
+  }
+]

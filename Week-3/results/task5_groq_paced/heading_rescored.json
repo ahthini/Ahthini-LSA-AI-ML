@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I am studying MSc Artificial Intelligence at the University of Surrey, which I began in February 2026."
+  },
+  {
+    "id": 2,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I earned a Distinction for my MSc in Healthcare Technologies (Medical AI pathway) from King’s College London."
+  },
+  {
+    "id": 3,
+    "original_correct": false,
+    "normalised_correct": true,
+    "changed": true,
+    "answer": "My psychiatric readmission research uses the MIMIC‑IV dataset, which provides structured electronic health records and clinical notes. This data includes 238,491 admissions from 107,926 patients that I processed for the study. (The notes do not specify any additional datasets.)"
+  },
+  {
+    "id": 4,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The final ensemble for the psychiatric readmission risk prediction achieved a ROC‑AUC of 0.8014. This performance reflects the research results reported in my CV and has not been deployed in clinical care."
+  },
+  {
+    "id": 5,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I used a Voronoi subdivision approach to partition the coronary perfusion territories. This method was applied to CT coronary angiography data after segmentation, skeletonisation, and mesh cleaning. The notes don’t specify any alternative techniques for this step."
+  },
+  {
+    "id": 6,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My NLP coursework used the BESSTIE‑CW‑26 dataset for both sentiment analysis and sarcasm detection."
+  },
+  {
+    "id": 7,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "In Week 1, my labels matched the specific AI prompt on 25 out of 30 items, giving an accuracy of **83.3 %**. This corresponded to a Cohen’s kappa of **0.779** when compared with the official dataset labels."
+  },
+  {
+    "id": 8,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved Week 2 newsroom triage configuration achieved a kappa of 0.7829."
+  },
+  {
+    "id": 9,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved Week 2 newsroom triage configuration used a confidence floor of 0.80."
+  },
+  {
+    "id": 10,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The Week 2 newsroom triage application was deployed on Render."
+  },
+  {
+    "id": 11,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My notice period is two weeks, and the exact start date can be confirmed directly with the hiring team."
+  },
+  {
+    "id": 12,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I’m based in Hampshire."
+  },
+  {
+    "id": 13,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My group machine‑learning project focused on predicting and preventing gestational diabetes."
+  },
+  {
+    "id": 14,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 15,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 16,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 17,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 18,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "The notes I have don’t mention any specific corpus used for studying opinions or ironic language. If you have more details about that project, I can provide a more precise answer."
+  },
+  {
+    "id": 19,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The newsroom triage application I built in the second week was deployed on Render."
+  },
+  {
+    "id": 20,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  }
+]

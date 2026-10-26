@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I am currently pursuing an MSc in Artificial Intelligence at the University of Surrey."
+  },
+  {
+    "id": 2,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I earned a Distinction for my MSc in Healthcare Technologies (Medical AI pathway) from King’s College London in 2026."
+  },
+  {
+    "id": 3,
+    "original_correct": false,
+    "normalised_correct": true,
+    "changed": true,
+    "answer": "My psychiatric readmission research uses the MIMIC‑IV dataset, which provides structured electronic health records and associated clinical notes."
+  },
+  {
+    "id": 4,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The final ensemble for the psychiatric readmission risk prediction achieved a ROC‑AUC of **0.8014**. This result is reported in my CV and reflects the performance of the combined models on the MIMIC‑IV dataset."
+  },
+  {
+    "id": 5,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I used a Voronoi subdivision approach to delineate coronary perfusion territories. The method built on CTCA‑derived segmentations, vessel skeletonisation, and subsequent mesh cleaning to generate the Voronoi regions. This pipeline was implemented with Python tools such as PyVista and SciPy."
+  },
+  {
+    "id": 6,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My coursework on sentiment and sarcasm used the BESSTIE‑CW‑26 dataset for both tasks."
+  },
+  {
+    "id": 7,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "In Week 1, my labels matched the specific AI prompt on 25 out of 30 items, which is an 83.3 % accuracy against the official labels. The corresponding kappa score was 0.779. (The notes do not provide a separate precision/recall breakdown.)"
+  },
+  {
+    "id": 8,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved hosted Week 2 newsroom‑triage configuration achieved a kappa of 0.7829. This result came from the run that used the refined prompt and a confidence floor of 0.80, scoring 25 out of 30 (83.3%). The notes don’t break down how much each individual change contributed to that improvement."
+  },
+  {
+    "id": 9,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The improved Week 2 newsroom‑triage configuration used a confidence floor of **0.80**. This setting helped raise the score to 25/30 (83.3%) with a kappa of 0.7829."
+  },
+  {
+    "id": 10,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The Week 2 newsroom triage application was deployed on Render. I built it with Python, Groq, and SQLite, and hosted the service there. (The notes don’t specify any other deployment environment.)"
+  },
+  {
+    "id": 11,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My notice period is two weeks, and an exact start date would need to be agreed directly."
+  },
+  {
+    "id": 12,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I’m based in Hampshire and I prefer remote work."
+  },
+  {
+    "id": 13,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My group healthcare machine‑learning project focused on predicting and preventing gestational diabetes."
+  },
+  {
+    "id": 14,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 15,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 16,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 17,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "The final ensemble model for my psychiatric readmission risk predictor achieved an ROC‑AUC of 0.8014. This result comes from the research project using MIMIC‑IV data and reflects evaluation on a held‑out test set. (Note: these are research findings and not evidence of a deployed clinical system.)"
+  },
+  {
+    "id": 18,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  },
+  {
+    "id": 19,
+    "original_correct": true,
+    "normalised_correct": true,
+    "changed": false,
+    "answer": "My second‑week newsroom triage tool is hosted on Render. The application runs with Python, Groq, and SQLite on that platform. (The notes don’t specify any other hosting service.)"
+  },
+  {
+    "id": 20,
+    "original_correct": false,
+    "normalised_correct": false,
+    "changed": false,
+    "answer": "I only answer questions about my work and background."
+  }
+]

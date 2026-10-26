@@ -1,0 +1,1263 @@
+[
+  {
+    "id": 1,
+    "question": "Which university are you studying MSc Artificial Intelligence at?",
+    "kind": "answerable",
+    "passages": [
+      "about-1",
+      "faq-1",
+      "experience-1"
+    ],
+    "answer": "I am studying my MSc in Artificial Intelligence at the University of Surrey, which I began in February 2026.",
+    "blocked": false,
+    "trace": {
+      "question": "Which university are you studying MSc Artificial Intelligence at?",
+      "retrieval": [
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.5774,
+          "chars": 1062
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.5625,
+          "chars": 1061
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.0891,
+          "chars": 1506
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "65 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "100% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 4069,
+        "promptTokensEstimated": 1018,
+        "promptTokensActual": 837,
+        "completionTokensActual": 88,
+        "totalTokensActual": 925
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 2,
+    "question": "What result did you achieve in MSc Healthcare Technologies at King's College London?",
+    "kind": "answerable",
+    "passages": [
+      "about-1",
+      "faq-1",
+      "experience-1"
+    ],
+    "answer": "I earned a Distinction for my MSc in Healthcare Technologies (Medical AI pathway) from King’s College London in 2026.",
+    "blocked": false,
+    "trace": {
+      "question": "What result did you achieve in MSc Healthcare Technologies at King's College London?",
+      "retrieval": [
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.8083,
+          "chars": 1062
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.6751,
+          "chars": 1061
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "84 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "91% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 4088,
+        "promptTokensEstimated": 1022,
+        "promptTokensActual": 841,
+        "completionTokensActual": 100,
+        "totalTokensActual": 941
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 3,
+    "question": "Which dataset does your psychiatric readmission research use?",
+    "kind": "answerable",
+    "passages": [
+      "experience-1",
+      "projects-1",
+      "faq-1"
+    ],
+    "answer": "My psychiatric readmission research uses the MIMIC‑IV dataset, which provides structured electronic health records and clinical notes.",
+    "blocked": false,
+    "trace": {
+      "question": "Which dataset does your psychiatric readmission research use?",
+      "retrieval": [
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.2649,
+          "chars": 3101
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.225,
+          "chars": 1061
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "61 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "79% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2991,
+        "promptTokensEstimated": 748,
+        "promptTokensActual": 634,
+        "completionTokensActual": 115,
+        "totalTokensActual": 749
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 4,
+    "question": "What ROC-AUC did the final psychiatric readmission ensemble achieve?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "faq-1",
+      "experience-1"
+    ],
+    "answer": "The final ensemble in my psychiatric readmission risk prediction project achieved a ROC‑AUC of 0.8014. This performance reflects the model’s ability to discriminate between readmission and non‑readmission cases across the validation set. (The result is reported in my CV and represents research findings, not a deployed clinical system.)",
+    "blocked": false,
+    "trace": {
+      "question": "What ROC-AUC did the final psychiatric readmission ensemble achieve?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.3311,
+          "chars": 3101
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.225,
+          "chars": 1061
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.1782,
+          "chars": 1506
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "68 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "59% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3520,
+        "promptTokensEstimated": 880,
+        "promptTokensActual": 874,
+        "completionTokensActual": 148,
+        "totalTokensActual": 1022
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 5,
+    "question": "Which method did you use for coronary perfusion subdivision?",
+    "kind": "answerable",
+    "passages": [
+      "skills-1",
+      "faq-1",
+      "experience-1"
+    ],
+    "answer": "For the coronary perfusion project I applied a Voronoi subdivision to the vessel models. This followed segmentation outputs and vessel skeletonisation, with subsequent mesh cleaning to finalize the geometry. The notes don’t specify any alternative subdivision methods.",
+    "blocked": false,
+    "trace": {
+      "question": "Which method did you use for coronary perfusion subdivision?",
+      "retrieval": [
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.3621,
+          "chars": 1475
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.3375,
+          "chars": 1061
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "60 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "57% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2955,
+        "promptTokensEstimated": 739,
+        "promptTokensActual": 662,
+        "completionTokensActual": 152,
+        "totalTokensActual": 814
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 6,
+    "question": "Which dataset did your sentiment and sarcasm coursework use?",
+    "kind": "answerable",
+    "passages": [
+      "skills-1",
+      "projects-1"
+    ],
+    "answer": "My coursework on sentiment and sarcasm involved analyzing clinical notes, but the specific dataset used isn’t detailed in the notes I have. Therefore, I don’t have enough information to identify the exact dataset. If you have more context, I can provide a more precise answer.",
+    "blocked": false,
+    "trace": {
+      "question": "Which dataset did your sentiment and sarcasm coursework use?",
+      "retrieval": [
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.3621,
+          "chars": 1475
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.2649,
+          "chars": 3101
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "60 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "2 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "36% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1884,
+        "promptTokensEstimated": 471,
+        "promptTokensActual": 465,
+        "completionTokensActual": 127,
+        "totalTokensActual": 592
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 7,
+    "question": "What was the specific AI prompt accuracy against official labels in Week 1?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "experience-1",
+      "about-1"
+    ],
+    "answer": "In Week 1, my labels matched the specific AI prompt on 25 out of 30 items, giving an accuracy of 83.3 % (kappa 0.779) against the official dataset labels.",
+    "blocked": false,
+    "trace": {
+      "question": "What was the specific AI prompt accuracy against official labels in Week 1?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.4636,
+          "chars": 3101
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.1782,
+          "chars": 1506
+        },
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.1155,
+          "chars": 1062
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "75 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "83% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3527,
+        "promptTokensEstimated": 882,
+        "promptTokensActual": 876,
+        "completionTokensActual": 148,
+        "totalTokensActual": 1024
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 8,
+    "question": "What kappa did the improved hosted Week 2 newsroom triage configuration achieve?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "experience-1",
+      "skills-1"
+    ],
+    "answer": "The improved Week 2 newsroom‑triage configuration achieved a Cohen’s kappa of 0.7829. This result came from the run that used the refined prompt and a confidence floor of 0.80, scoring 25 out of 30 correct labels (83.3%).",
+    "blocked": false,
+    "trace": {
+      "question": "What kappa did the improved hosted Week 2 newsroom triage configuration achieve?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.4636,
+          "chars": 3101
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.0905,
+          "chars": 1475
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "80 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "68% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3532,
+        "promptTokensEstimated": 883,
+        "promptTokensActual": 877,
+        "completionTokensActual": 153,
+        "totalTokensActual": 1030
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 9,
+    "question": "What confidence floor did the improved Week 2 newsroom triage configuration use?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "experience-1",
+      "skills-1"
+    ],
+    "answer": "The improved Week 2 newsroom‑triage configuration used a confidence floor of **0.80**. This setting helped raise the evaluation score to 25/30 (83.3%) with a kappa of 0.7829.",
+    "blocked": false,
+    "trace": {
+      "question": "What confidence floor did the improved Week 2 newsroom triage configuration use?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.4636,
+          "chars": 3101
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.1811,
+          "chars": 1475
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "80 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "71% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3532,
+        "promptTokensEstimated": 883,
+        "promptTokensActual": 876,
+        "completionTokensActual": 125,
+        "totalTokensActual": 1001
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 10,
+    "question": "Where was the Week 2 newsroom triage app deployed?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "experience-1",
+      "skills-1"
+    ],
+    "answer": "I deployed the Week 2 newsroom triage application on Render. The deployment used Python, Groq, and SQLite. The notes don’t specify any other hosting environment.",
+    "blocked": false,
+    "trace": {
+      "question": "Where was the Week 2 newsroom triage app deployed?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.3311,
+          "chars": 3101
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.2673,
+          "chars": 1506
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.0905,
+          "chars": 1475
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "50 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "75% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3502,
+        "promptTokensEstimated": 876,
+        "promptTokensActual": 873,
+        "completionTokensActual": 96,
+        "totalTokensActual": 969
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 11,
+    "question": "What is your notice period?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-1"
+    ],
+    "answer": "My notice period is two weeks, and an exact start date would need to be agreed directly.",
+    "blocked": false,
+    "trace": {
+      "question": "What is your notice period?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.225,
+          "chars": 1061
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "27 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "1 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "100% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1434,
+        "promptTokensEstimated": 359,
+        "promptTokensActual": 345,
+        "completionTokensActual": 96,
+        "totalTokensActual": 441
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 12,
+    "question": "Where are you based?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-1"
+    ],
+    "answer": "I am based in Hampshire and prefer remote work. (My relocation preferences are not specified in the notes.)",
+    "blocked": false,
+    "trace": {
+      "question": "Where are you based?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.1125,
+          "chars": 1061
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "20 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "1 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "100% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1427,
+        "promptTokensEstimated": 357,
+        "promptTokensActual": 344,
+        "completionTokensActual": 105,
+        "totalTokensActual": 449
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 13,
+    "question": "What condition did your group healthcare machine learning project focus on?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-1",
+      "skills-1",
+      "about-1"
+    ],
+    "answer": "My group machine‑learning project focused on predicting and preventing gestational diabetes.",
+    "blocked": false,
+    "trace": {
+      "question": "What condition did your group healthcare machine learning project focus on?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.5625,
+          "chars": 1061
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.3621,
+          "chars": 1475
+        },
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.3464,
+          "chars": 1062
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "75 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "89% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 4044,
+        "promptTokensEstimated": 1011,
+        "promptTokensActual": 866,
+        "completionTokensActual": 89,
+        "totalTokensActual": 955
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 14,
+    "question": "Who won the cricket world cup?",
+    "kind": "must_refuse",
+    "passages": [],
+    "answer": "I only answer questions about my work and background.",
+    "blocked": true,
+    "trace": {
+      "question": "Who won the cricket world cup?",
+      "retrieval": [],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "30 characters"
+        },
+        {
+          "ok": false,
+          "rule": "no-relevant-passage",
+          "detail": "nothing scored above SIMILARITY_FLOOR"
+        }
+      ],
+      "tokens": {},
+      "mode": null
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "refused"
+    }
+  },
+  {
+    "id": 15,
+    "question": "What is the capital of Brazil?",
+    "kind": "must_refuse",
+    "passages": [],
+    "answer": "I only answer questions about my work and background.",
+    "blocked": true,
+    "trace": {
+      "question": "What is the capital of Brazil?",
+      "retrieval": [],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "30 characters"
+        },
+        {
+          "ok": false,
+          "rule": "no-relevant-passage",
+          "detail": "nothing scored above SIMILARITY_FLOOR"
+        }
+      ],
+      "tokens": {},
+      "mode": null
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "refused"
+    }
+  },
+  {
+    "id": 16,
+    "question": "Where are you doing your current postgraduate degree?",
+    "kind": "paraphrase",
+    "passages": [],
+    "answer": "I only answer questions about my work and background.",
+    "blocked": true,
+    "trace": {
+      "question": "Where are you doing your current postgraduate degree?",
+      "retrieval": [],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "53 characters"
+        },
+        {
+          "ok": false,
+          "rule": "no-relevant-passage",
+          "detail": "nothing scored above SIMILARITY_FLOOR"
+        }
+      ],
+      "tokens": {},
+      "mode": null
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "blocked: guardrail"
+    }
+  },
+  {
+    "id": 17,
+    "question": "What was the area under the ROC curve for your combined hospital readmission predictor?",
+    "kind": "paraphrase",
+    "passages": [
+      "projects-1",
+      "faq-1",
+      "experience-1"
+    ],
+    "answer": "The final ensemble model for my psychiatric readmission risk predictor achieved an ROC‑AUC of 0.8014. This result reflects the performance on the patient‑level split of the 238,491 admissions in my study.",
+    "blocked": false,
+    "trace": {
+      "question": "What was the area under the ROC curve for your combined hospital readmission predictor?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.1325,
+          "chars": 3101
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.1125,
+          "chars": 1061
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.0891,
+          "chars": 1506
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "87 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "67% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3539,
+        "promptTokensEstimated": 885,
+        "promptTokensActual": 877,
+        "completionTokensActual": 142,
+        "totalTokensActual": 1019
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 18,
+    "question": "Which corpus did you use to study opinions and ironic language?",
+    "kind": "paraphrase",
+    "passages": [
+      "about-1",
+      "skills-1",
+      "projects-1"
+    ],
+    "answer": "I’ve worked on sentiment and sarcasm analysis as part of my coursework, but the notes don’t specify the exact corpus I used for studying opinions and ironic language. If you need details about the dataset, I’d need to refer to the original project documentation.",
+    "blocked": false,
+    "trace": {
+      "question": "Which corpus did you use to study opinions and ironic language?",
+      "retrieval": [
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.1155,
+          "chars": 1062
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.0905,
+          "chars": 1475
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.0662,
+          "chars": 3101
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "63 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "48% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2961,
+        "promptTokensEstimated": 741,
+        "promptTokensActual": 669,
+        "completionTokensActual": 138,
+        "totalTokensActual": 807
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 19,
+    "question": "Which hosting service runs your second-week article sorting tool?",
+    "kind": "paraphrase",
+    "passages": [
+      "experience-1",
+      "projects-1"
+    ],
+    "answer": "The notes don’t specify which hosting service was used for the newsroom triage application I worked on during week 2 of my LSA AI and Machine Learning internship. If you have more details or a specific platform in mind, I can try to clarify further.",
+    "blocked": false,
+    "trace": {
+      "question": "Which hosting service runs your second-week article sorting tool?",
+      "retrieval": [
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.0891,
+          "chars": 1506
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.0662,
+          "chars": 3101
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "65 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "2 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "43% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1924,
+        "promptTokensEstimated": 481,
+        "promptTokensActual": 438,
+        "completionTokensActual": 141,
+        "totalTokensActual": 579
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 20,
+    "question": "Which geometric partitioning approach underpins your heart blood-supply model?",
+    "kind": "paraphrase",
+    "passages": [
+      "experience-1",
+      "projects-1",
+      "skills-1"
+    ],
+    "answer": "My coronary perfusion model is built on a Voronoi subdivision of the coronary artery tree. I integrate CT segmentation from deep‑learning methods, then skeletonise the vessels and apply the Voronoi partition to define perfusion territories. This geometric approach provides a reproducible computational pipeline for mapping blood supply.",
+    "blocked": false,
+    "trace": {
+      "question": "Which geometric partitioning approach underpins your heart blood-supply model?",
+      "retrieval": [
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.1782,
+          "chars": 1506
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.1325,
+          "chars": 3101
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.0905,
+          "chars": 1475
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "78 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "45% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 3425,
+        "promptTokensEstimated": 857,
+        "promptTokensActual": 753,
+        "completionTokensActual": 154,
+        "totalTokensActual": 907
+      },
+      "mode": "groq"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  }
+]

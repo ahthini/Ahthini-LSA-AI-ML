@@ -1,0 +1,23 @@
+[
+  {
+    "strategy": "whole",
+    "correct": 15,
+    "items": 20,
+    "graded_percent": 75,
+    "changed_ids": "3"
+  },
+  {
+    "strategy": "heading",
+    "correct": 15,
+    "items": 20,
+    "graded_percent": 75,
+    "changed_ids": "3"
+  },
+  {
+    "strategy": "window",
+    "correct": 16,
+    "items": 20,
+    "graded_percent": 80,
+    "changed_ids": "3"
+  }
+]

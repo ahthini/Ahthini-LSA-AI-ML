@@ -1,0 +1,5 @@
+Demo: keyword and TF-IDF with stopwords removed scored 60%, keeping stopwords scored 50%. Demo refusals were 2/2, 2/2, and 0/2 respectively.
+Live Groq: earlier normalised keyword-window run scored 80%. TF-IDF removed scored 75%, kept scored 90%. Both TF-IDF runs had zero API errors and refused 2/2. Removed retrieved no passages for both refusals. Kept retrieved irrelevant passages, with the grounded guardrail blocking both outputs. Thus retrieval refusal and final refusal are distinct.
+Live paraphrases: removed 1/5, kept 4/5. These personalised results differ from the supplied sample. Do not claim that both methods fail every paraphrase or that TF-IDF necessarily improves answer accuracy.
+Deployed choice: TF-IDF with English stopwords removed for stricter retrieval of off-topic questions, accepting lower measured live accuracy in this run.
+Dense experiment: not completed because sentence_transformers was not installed. This is an environment limitation, not an embedding score.

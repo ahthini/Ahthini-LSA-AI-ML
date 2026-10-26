@@ -1,0 +1,4 @@
+{
+  "status": "not completed",
+  "error": "ModuleNotFoundError: No module named 'sentence_transformers'"
+}

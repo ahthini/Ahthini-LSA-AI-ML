@@ -1,0 +1,17 @@
+Task 5 saved-answer review
+
+All 60 saved responses were inspected. No additional API calls were made.
+
+Question 3 is a false negative in all three strategies. The answers correctly name MIMIC-IV but use a non-breaking hyphen (U+2011). The literal substring grader expects an ASCII hyphen or space.
+
+Correcting only this formatting mismatch gives whole 15/20 (75%), heading 15/20 (75%), and window 16/20 (80%). These are formatting-adjusted expected-fact scores, not a full semantic or grounding audit score. Original logs and comparison.csv remain unchanged.
+
+Question 7 is genuinely wrong in all three strategies. The model confuses human-vs-AI agreement (83.3%, kappa 0.779) with AI-vs-official agreement (80%, kappa 0.733).
+
+Paraphrase failures remain meaningful. Question 16 retrieves nothing in all strategies. Heading fails to retrieve the expected fact for questions 17, 18 and 20. Some refusals follow a grounding guardrail rather than an API failure.
+
+Whole-document question 6 incorrectly associates sentiment and sarcasm coursework with clinical notes. Large retrieved chunks can also be dropped by the context limit. Retrieval found the fact is calculated before context packing, so an apparent retrieval success does not prove that fact reached the model.
+
+Passing the expected-fact check does not establish that every sentence is supported. Whole question 4 refers to a validation set, and window question 17 refers to a held-out test set. The supplied project notes do not establish those split-specific claims. Whole and window question 9 also suggest the confidence floor helped raise the score, despite the notes cautioning against attributing the gain to one change.
+
+Keep these runs and the fixed question set. If the scorer is normalised, apply the same normalisation to every strategy and record a separate rescoring result without rerunning the model.
