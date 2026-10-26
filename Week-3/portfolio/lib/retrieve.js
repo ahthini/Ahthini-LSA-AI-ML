@@ -57,15 +57,17 @@ export function retrieve(question, chunks, { passages = 3, floor = 0 } = {}) {
  */
 export function buildContext(passages, maxChars) {
   const kept = [];
+  const usedPassages = [];
   let total = 0;
   let dropped = 0;
   for (const p of passages) {
     const block = `[${p.id}] ${p.text}`;
     if (total + block.length > maxChars) { dropped += 1; continue; }
     kept.push(block);
+    usedPassages.push(p);
     total += block.length + 2;
   }
-  return { context: kept.join("\n\n"), used: kept.length, droppedForSpace: dropped };
+  return { context: kept.join("\n\n"), used: kept.length, droppedForSpace: dropped, usedPassages };
 }
 
 export const RETRIEVAL_METHOD = "keyword overlap";

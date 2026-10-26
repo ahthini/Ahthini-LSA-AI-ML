@@ -9,7 +9,7 @@
 // ---------------------------------------------------------------------------
 
 import * as cfg from "./config.js";
-import { retrieve, buildContext, RETRIEVAL_METHOD } from "./lib/retrieve.js";
+import { retrieve, buildContext, RETRIEVAL_METHOD } from "./lib/retrieve_vector.js";
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -20,6 +20,7 @@ const SUGGESTED = [
 ];
 
 let CHUNKS = [];
+let VECTORISER = null;
 
 // --- tiny markdown render, headings and paragraphs only --------------------
 function renderMarkdown(md) {
@@ -95,11 +96,20 @@ async function ask(question) {
   const passages = retrieve(question, CHUNKS, {
     passages: cfg.PASSAGES,
     floor: cfg.SIMILARITY_FLOOR,
+    vectoriser: VECTORISER,
   });
-  const { context, droppedForSpace } = buildContext(
+  const { context, droppedForSpace, usedPassages } = buildContext(
     passages,
     cfg.MAX_CONTEXT_CHARS
   );
+
+  const sources = document.createElement("div")
+  sources.className = "answer-sources"
+  sources.innerHTML = usedPassages.length
+    ? `<p>Sources supplied to the answer</p><ul>${usedPassages.map((p) =>
+        `<li>${esc(p.heading)} · ${esc(p.id)} <span>similarity ${Number(p.score).toFixed(3)}</span></li>`).join("")}</ul>`
+    : "<p>No relevant sources found.</p>"
+  turn.querySelector(".a").after(sources)
 
   let data;
   try {
@@ -147,6 +157,7 @@ async function start() {
   try {
     const doc = await (await fetch("chunks.json")).json();
     CHUNKS = doc.chunks || [];
+    VECTORISER = doc.vectoriser || null;
     $("#foot-note").textContent =
       `${CHUNKS.length} chunks, built ${doc.built_at}, strategy "${doc.strategy}".`;
   } catch {

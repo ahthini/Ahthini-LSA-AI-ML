@@ -32,7 +32,7 @@ def vectorise(doc, min_df=1, sublinear_tf=True, stop_words="english"):
         norm="l2",
         min_df=min_df,
         stop_words=stop_words,
-        token_pattern=r"(?u)\b\w\w+\b",
+        token_pattern=r"[a-z0-9]{2,}",
     )
     matrix = vec.fit_transform(texts)
 
@@ -46,7 +46,7 @@ def vectorise(doc, min_df=1, sublinear_tf=True, stop_words="english"):
         "sublinear_tf": sublinear_tf,
         "smooth_idf": True,
         "norm": "l2",
-        "token_pattern": r"\b\w\w+\b",
+        "token_pattern": r"[a-z0-9]{2,}",
         "vocab_size": len(vocab),
         "vocab": vocab,
         "idf": idf,

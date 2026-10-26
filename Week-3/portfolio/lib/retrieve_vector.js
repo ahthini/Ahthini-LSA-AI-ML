@@ -12,13 +12,8 @@
 //  "two or more word characters", so that is what this does.
 // ---------------------------------------------------------------------------
 
-// scikit-learn's default is r"(?u)\b\w\w+\b". The (?u) makes Python's \w
-// match any Unicode letter; JavaScript's \w is ASCII only. For English notes
-// the two agree exactly. If your notes contain accented characters, the two
-// sides will tokenise them differently and those words will stop matching.
-// Fix by passing a token_pattern of [a-z0-9]{2,} on the Python side so both
-// sides are ASCII, or by writing the names without accents in content/.
-const TOKEN = /\b\w\w+\b/g;
+//match the explicit ASCII token pattern exported by Python
+const TOKEN = /[a-z0-9]{2,}/g
 
 export function tokenise(text) {
   return String(text).toLowerCase().match(TOKEN) || [];

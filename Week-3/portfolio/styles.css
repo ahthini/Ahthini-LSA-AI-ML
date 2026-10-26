@@ -126,3 +126,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .suggestions button { text-align: left; border-radius: 12px; }
   .turn { padding: 16px; }
 }
+
+.answer-sources { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 12px; font-size: .82rem; color: var(--ink-soft); }
+.answer-sources p { margin: 0 0 6px; font-weight: 600; }
+.answer-sources ul { margin: 0; padding-left: 18px; }
+.answer-sources li { padding: 3px 0; overflow-wrap: anywhere; }
+.answer-sources span { font-family: var(--mono); }

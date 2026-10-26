@@ -6,12 +6,11 @@
 // ---------------------------------------------------------------------------
 
 import * as cfg from "./config.js";
-import { retrieve, buildContext, RETRIEVAL_METHOD } from "./lib/retrieve.js";
+import { contains } from "./lib/grade.js";
+import { retrieve, buildContext, RETRIEVAL_METHOD } from "./lib/retrieve_vector.js";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
-const contains = (t, ns) =>
-  ns.some((n) => String(t).toLowerCase().includes(String(n).toLowerCase()));
 
 let LAST = null;
 
@@ -22,10 +21,11 @@ async function run() {
   $("#scores").hidden = true;
   $("#copywrap").hidden = true;
 
-  let chunks, set;
+  let chunks, set, vectoriser;
   try {
     const doc = await (await fetch("chunks.json")).json();
     chunks = doc.chunks || [];
+    vectoriser = doc.vectoriser;
     set = (await (await fetch("questions.json")).json()).questions;
   } catch (err) {
     $("#status").textContent = `Could not load chunks.json or questions.json: ${err.message}`;
@@ -45,7 +45,7 @@ async function run() {
   for (const item of set) {
     $("#status").textContent = `question ${item.id} of ${set.length}`;
     const passages = retrieve(item.q, chunks, {
-      passages: cfg.PASSAGES, floor: cfg.SIMILARITY_FLOOR,
+      passages: cfg.PASSAGES, floor: cfg.SIMILARITY_FLOOR, vectoriser,
     });
     const { context } = buildContext(passages, cfg.MAX_CONTEXT_CHARS);
     charSum += context.length;
@@ -78,8 +78,11 @@ async function run() {
         body: JSON.stringify({ question: item.q, passages, context }),
       });
       data = await res.json();
+      if (!res.ok || data.error) throw new Error(`HTTP ${res.status}`);
     } catch (err) {
-      data = { answer: `(request failed: ${err.message})`, blocked: true };
+      $("#status").textContent = `Evaluation incomplete: ${err.message}. Wait before retrying.`;
+      $("#run").disabled = false;
+      return;
     }
 
     let ok, why;

@@ -15,7 +15,8 @@ import path from "node:path";
 import * as cfg from "../config.js";
 import { retrieve as keywordRetrieve, buildContext } from "../lib/retrieve.js";
 import { retrieve as vectorRetrieve } from "../lib/retrieve_vector.js";
-import handler, { demoAnswer } from "../api/chat.js";
+import handler from "../api/chat.js";
+import { contains } from "../lib/grade.js";
 
 const arg = (flag, fallback) => {
   const i = process.argv.indexOf(flag);
@@ -39,8 +40,6 @@ const runRetrieve = (q) =>
         floor: cfg.SIMILARITY_FLOOR });
 const set = JSON.parse(fs.readFileSync(path.join(ROOT, "questions.json"), "utf8"));
 
-const contains = (text, needles) =>
-  needles.some((n) => String(text).toLowerCase().includes(String(n).toLowerCase()));
 
 /** Did retrieval surface a chunk that contains the expected fact? */
 function retrievalHit(passages, expect) {
@@ -75,17 +74,43 @@ function contextWaste(passages, expect) {
   return (total - useful) / total;
 }
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+let lastRequest = 0
+
 async function answerFor(question, passages, context) {
-  const req = new Request("http://local/api/chat", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ question, passages, context }),
-  });
-  const res = await handler.fetch(req);
-  return res.json();
+  const live = Boolean(process.env.GROQ_API_KEY)
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
+    if (live) await sleep(Math.max(0, 4000 - (Date.now() - lastRequest)))
+    lastRequest = Date.now()
+    let status = 0, data
+    try {
+      const req = new Request("http://local/api/chat", {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question, passages, context })
+      })
+      const res = await handler.fetch(req)
+      status = res.status
+      data = await res.json()
+      if (res.ok && !data.error) return { ...data, status, attempts: attempt }
+    } catch {
+      data = { error: "request failed before a valid response was received" }
+    }
+    const retryable = status === 429 || status === 0 || status >= 500
+    if (!live || !retryable || attempt === 4) {
+      return { apiError: true, status, attempts: attempt,
+               error: `request failed (HTTP ${status || "network"})` }
+    }
+    const suggested = /Wait ([\d.]+) seconds/.exec(data.error || "")
+    const wait = Math.max(15000 * attempt, suggested ? Number(suggested[1]) * 1000 : 0)
+    if (wait > 120000) return { apiError: true, status, attempts: attempt,
+                              error: "rate limit requires a longer wait, rerun later" }
+    console.log(`retry ${attempt}/3 after HTTP ${status || "network"}, waiting ${Math.ceil(wait / 1000)}s`)
+    await sleep(wait)
+  }
 }
 
 function grade(item, passages, data) {
+  if (data.apiError) return { correct: false, why: data.error, apiError: true };
   if (item.kind === "must_refuse") {
     const refused = Boolean(data.blocked) || data.answer === cfg.OFF_TOPIC_REPLY;
     return { correct: refused, why: refused ? "refused" : "answered anyway" };
@@ -111,6 +136,8 @@ const pad = (s, n) => String(s).padEnd(n).slice(0, n);
   const tally = { answerable: [0, 0], needs_faq: [0, 0], must_refuse: [0, 0],
     paraphrase: [0, 0] };
   let retrOk = 0;
+  let apiErrors = 0;
+  const records = [];
   const rrs = [];
   const wastes = [];
   let charsSent = 0;
@@ -132,6 +159,9 @@ const pad = (s, n) => String(s).padEnd(n).slice(0, n);
     } else {
       const data = await answerFor(item.q, passages, context);
       line = grade(item, passages, data);
+      records.push({ id: item.id, question: item.q, kind: item.kind,
+        passages: passages.map((p) => p.id), ...data, grade: line });
+      if (data.apiError) apiErrors += 1;
     }
 
     tally[item.kind][1] += 1;
@@ -140,7 +170,7 @@ const pad = (s, n) => String(s).padEnd(n).slice(0, n);
     console.log(
       pad(item.id, 4) + pad(item.kind, 13) +
       pad(rHit ? "ok" : "MISS", 6) +
-      pad(line.correct ? "ok" : "FAIL", 6) + line.why
+      pad(line.apiError ? "ERROR" : line.correct ? "ok" : "FAIL", 6) + line.why
     );
   }
 
@@ -157,6 +187,13 @@ const pad = (s, n) => String(s).padEnd(n).slice(0, n);
   console.log(`retrieval MRR            : ${mean(rrs).toFixed(3)}`);
   console.log(`mean context waste       : ${(mean(wastes) * 100).toFixed(1)}%`);
   console.log(`mean chars per question  : ${Math.round(charsSent / total)}`);
+  console.log(`api errors               : ${apiErrors}`);
+  if (has("--details")) fs.writeFileSync(path.resolve(arg("--details", "details.json")), JSON.stringify(records, null, 2));
+  if (apiErrors) {
+    console.log("comparison incomplete: resolve API errors before reporting accuracy");
+    process.exitCode = 2;
+    return;
+  }
   console.log(`graded correct           : ${correct}/${total} `
     + `(${(correct / total * 100).toFixed(1)}%)`);
 })();
