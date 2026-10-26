@@ -5,13 +5,13 @@
 
 :root {
   color-scheme: dark;
-  --bg: #191020;
-  --surface: #291b36;
+  --bg: #121016;
+  --surface: #1d1825;
   --ink: #f1edf7;
   --ink-soft: #b5aabd;
-  --line: #513565;
+  --line: #3c314b;
   --accent: #b69af7;
-  --accent-soft: #382348;
+  --accent-soft: #292035;
   --ok: #8bd5b0;
   --warn: #edbd88;
   --radius: 14px;
