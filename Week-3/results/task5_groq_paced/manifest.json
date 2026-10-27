@@ -1,0 +1,5 @@
+{
+  "mode": "groq",
+  "fingerprint": "952d91aba68f09ae7eb2574751392deeefde56e2b73432bf2e6ac94a856428e4",
+  "primary_metric": "graded_accuracy"
+}

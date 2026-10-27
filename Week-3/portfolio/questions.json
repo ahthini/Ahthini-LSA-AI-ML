@@ -1,0 +1,175 @@
+{
+  "note": "20 personalised questions: 10 direct, 3 requiring FAQ details, 2 off-topic refusals and 5 paraphrases. FAQ is enabled. Notice period and location reflect the updated personal details. An exact start date and relocation preferences remain unspecified. expect_any lists alternative expressions of the same fact. Keyword grading is approximate and answers should also be reviewed manually. Keep this set fixed across retrieval experiments.",
+  "questions": [
+    {
+      "id": 1,
+      "kind": "answerable",
+      "q": "Which university are you studying MSc Artificial Intelligence at?",
+      "expect_any": [
+        "University of Surrey",
+        "Surrey"
+      ]
+    },
+    {
+      "id": 2,
+      "kind": "answerable",
+      "q": "What result did you achieve in MSc Healthcare Technologies at King's College London?",
+      "expect_any": [
+        "Distinction"
+      ]
+    },
+    {
+      "id": 3,
+      "kind": "answerable",
+      "q": "Which dataset does your psychiatric readmission research use?",
+      "expect_any": [
+        "MIMIC-IV",
+        "MIMIC IV"
+      ]
+    },
+    {
+      "id": 4,
+      "kind": "answerable",
+      "q": "What ROC-AUC did the final psychiatric readmission ensemble achieve?",
+      "expect_any": [
+        "0.8014"
+      ]
+    },
+    {
+      "id": 5,
+      "kind": "answerable",
+      "q": "Which method did you use for coronary perfusion subdivision?",
+      "expect_any": [
+        "Voronoi"
+      ]
+    },
+    {
+      "id": 6,
+      "kind": "answerable",
+      "q": "Which dataset did your sentiment and sarcasm coursework use?",
+      "expect_any": [
+        "BESSTIE-CW-26",
+        "BESSTIE"
+      ]
+    },
+    {
+      "id": 7,
+      "kind": "answerable",
+      "q": "What was the specific AI prompt accuracy against official labels in Week 1?",
+      "expect_any": [
+        "80.0%",
+        "80%",
+        "80 percent",
+        "24/30",
+        "24 out of 30"
+      ]
+    },
+    {
+      "id": 8,
+      "kind": "answerable",
+      "q": "What kappa did the improved hosted Week 2 newsroom triage configuration achieve?",
+      "expect_any": [
+        "0.7829"
+      ]
+    },
+    {
+      "id": 9,
+      "kind": "answerable",
+      "q": "What confidence floor did the improved Week 2 newsroom triage configuration use?",
+      "expect_any": [
+        "0.80",
+        "0.8",
+        "80%",
+        "80 percent"
+      ]
+    },
+    {
+      "id": 10,
+      "kind": "answerable",
+      "q": "Where was the Week 2 newsroom triage app deployed?",
+      "expect_any": [
+        "Render"
+      ]
+    },
+    {
+      "id": 11,
+      "kind": "needs_faq",
+      "q": "What is your notice period?",
+      "expect_any": [
+        "two weeks",
+        "2 weeks",
+        "two-week"
+      ]
+    },
+    {
+      "id": 12,
+      "kind": "needs_faq",
+      "q": "Where are you based?",
+      "expect_any": [
+        "Hampshire"
+      ]
+    },
+    {
+      "id": 13,
+      "kind": "needs_faq",
+      "q": "What condition did your group healthcare machine learning project focus on?",
+      "expect_any": [
+        "gestational diabetes"
+      ]
+    },
+    {
+      "id": 14,
+      "kind": "must_refuse",
+      "q": "Who won the cricket world cup?",
+      "expect_any": []
+    },
+    {
+      "id": 15,
+      "kind": "must_refuse",
+      "q": "What is the capital of Brazil?",
+      "expect_any": []
+    },
+    {
+      "id": 16,
+      "kind": "paraphrase",
+      "q": "Where are you doing your current postgraduate degree?",
+      "expect_any": [
+        "University of Surrey",
+        "Surrey"
+      ]
+    },
+    {
+      "id": 17,
+      "kind": "paraphrase",
+      "q": "What was the area under the ROC curve for your combined hospital readmission predictor?",
+      "expect_any": [
+        "0.8014"
+      ]
+    },
+    {
+      "id": 18,
+      "kind": "paraphrase",
+      "q": "Which corpus did you use to study opinions and ironic language?",
+      "expect_any": [
+        "BESSTIE-CW-26",
+        "BESSTIE"
+      ]
+    },
+    {
+      "id": 19,
+      "kind": "paraphrase",
+      "q": "Which hosting service runs your second-week article sorting tool?",
+      "expect_any": [
+        "Render"
+      ]
+    },
+    {
+      "id": 20,
+      "kind": "paraphrase",
+      "q": "Which geometric partitioning approach underpins your heart blood-supply model?",
+      "expect_any": [
+        "Voronoi"
+      ]
+    }
+  ]
+}

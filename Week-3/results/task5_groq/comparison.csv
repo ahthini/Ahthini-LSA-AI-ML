@@ -1,0 +1,4 @@
+strategy,mode,chunks,retrieval_percent,mrr,waste_percent,mean_chars,graded_percent
+whole,groq,5,95.0,0.867,28.3,2276,55.0
+heading,groq,23,80.0,0.775,46.3,920,20.0
+window,groq,19,85.0,0.742,46.7,1456,10.0

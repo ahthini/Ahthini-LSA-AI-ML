@@ -1,0 +1,4 @@
+method,mode,retrieval_percent,mrr,waste_percent,mean_chars,graded_percent,refusals_correct,paraphrases_correct
+keyword,demo,85.0,0.742,46.7,1456,60.0,2,1
+stopwords_removed,demo,85.0,0.792,48.7,1433,60.0,2,1
+stopwords_kept,demo,85.0,0.742,45.1,1696,50.0,0,1

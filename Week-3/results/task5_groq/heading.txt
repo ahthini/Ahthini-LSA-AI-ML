@@ -1,0 +1,38 @@
+chunks   : heading.json (strategy "heading", 23 chunks)
+method   : keyword overlap
+settings : PASSAGES=3 FLOOR=0.05 MAX_CONTEXT_CHARS=4000
+key      : set, live model
+
+id  kind         retr  ans   note
+------------------------------------------------------------------------------
+1   answerable   ok    ok    fact present
+2   answerable   ok    FAIL  fact missing from answer
+3   answerable   ok    FAIL  fact missing from answer
+4   answerable   ok    FAIL  fact missing from answer
+5   answerable   ok    FAIL  fact missing from answer
+6   answerable   ok    FAIL  fact missing from answer
+7   answerable   ok    FAIL  fact missing from answer
+8   answerable   ok    FAIL  fact missing from answer
+9   answerable   ok    FAIL  fact missing from answer
+10  answerable   ok    FAIL  fact missing from answer
+11  needs_faq    ok    ok    fact present
+12  needs_faq    ok    FAIL  fact missing from answer
+13  needs_faq    ok    FAIL  fact missing from answer
+14  must_refuse  ok    ok    refused
+15  must_refuse  ok    ok    refused
+16  paraphrase   MISS  FAIL  blocked: guardrail
+17  paraphrase   MISS  FAIL  fact missing from answer
+18  paraphrase   MISS  FAIL  fact missing from answer
+19  paraphrase   ok    FAIL  fact missing from answer
+20  paraphrase   MISS  FAIL  fact missing from answer
+------------------------------------------------------------------------------
+answerable     1/10
+needs_faq      1/3
+must_refuse    2/2
+paraphrase     0/5
+
+retrieval found the fact : 16/20 (80.0%)
+retrieval MRR            : 0.775
+mean context waste       : 46.3%
+mean chars per question  : 920
+graded correct           : 4/20 (20.0%)

@@ -1,0 +1,48 @@
+{
+ "strategy": "whole",
+ "built_at": "2026-10-26T08:20:53Z",
+ "files": [
+  "about.md",
+  "experience.md",
+  "projects.md",
+  "skills.md",
+  "faq.md"
+ ],
+ "chunks": [
+  {
+   "file": "about.md",
+   "heading": "about",
+   "text": "## Background and interests\n\nI am Ahthini Aranan, an MSc Artificial Intelligence student at the University of Surrey. My background combines biomedical sciences, healthcare technologies and machine learning. I am interested in applying AI to healthcare and data, with attention to evaluation, explainability and reliability.\n\n## Education\n\nI am studying MSc Artificial Intelligence at the University of Surrey, which I started in February 2026. My CV lists an expected Distinction, rather than an awarded result. I hold an MSc Healthcare Technologies in the Medical AI pathway from King's College London, awarded with Distinction in 2026, and a BSc Biomedical Sciences with a 2:1 from Bangor University, awarded in 2024.\n\n## Career interests\n\nI am seeking opportunities in AI, data science and health-tech. My projects cover structured clinical data, clinical notes, biomedical imaging and natural language processing. I am also developing practical experience in API integration, deployment and evaluating language-model applications through the LSA internship.",
+   "id": "about-1",
+   "chars": 1062
+  },
+  {
+   "file": "experience.md",
+   "heading": "experience",
+   "text": "## University of Surrey research\n\nMy research project at the University of Surrey began in March 2026 and is continuing for publication, as recorded in my CV. It investigates psychiatric readmission risk using structured electronic health records and clinical notes from MIMIC-IV. The work includes preprocessing, feature engineering, NLP, patient-level partitioning and leakage auditing.\n\n## LSA AI and Machine Learning internship\n\nI started the London Success Academy AI and Machine Learning work placement in October 2026. Week 1 focused on label quality, agreement, model evaluation and failure analysis. Week 2 involved improving, testing and deploying a newsroom triage application. Week 3 is an ongoing portfolio chatbot project, exploring retrieval and how source notes influence answers.\n\n## King's College London research\n\nFrom May to October 2025, I worked on modelling coronary perfusion territories using CTCA and Voronoi subdivision. I developed a reproducible computational pipeline integrating CT segmentation obtained from deep learning methods, vessel skeletonisation and automated mesh cleaning.\n\n## Leadership and earlier experience\n\nI was Chairperson and Treasurer of Bangor Medical Science Society from 2022 to 2024, organising events, managing budgeting and securing sponsorships. I also worked as a Peer Guide and Course Representative in 2023 to 2024 and an Open Day Representative in 2023. Earlier experience includes customer service, care-home volunteering and dental shadowing.",
+   "id": "experience-1",
+   "chars": 1506
+  },
+  {
+   "file": "projects.md",
+   "heading": "projects",
+   "text": "## Psychiatric readmission risk prediction\n\nMy psychiatric readmission research uses structured EHR data and clinical notes from MIMIC-IV. The pipeline covered 238,491 admissions from 107,926 patients, with patient-level data partitioning. Models compared included LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensembles. The final ensemble achieved ROC-AUC 0.8014 and PR-AUC 0.5965, as reported in my CV. Evaluation included SHAP, calibration, subgroup analysis, feature reduction and leakage auditing. These are research results, not evidence of deployment in clinical care.\n\n## Coronary perfusion modelling\n\nMy King's College London project modelled coronary perfusion territories using CTCA and Voronoi subdivision. The reproducible pipeline combined CT segmentation, vessel skeletonisation and mesh cleaning to investigate subendocardial territories. Tools included Python, PyVista, SciPy, NiBabel, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer.\n\n## NLP sentiment and sarcasm\n\nMy NLP coursework used the BESSTIE-CW-26 dataset for both sentiment and sarcasm. In Week 1 of the LSA internship, I revisited label quality by manually labelling 30 validation texts for both tasks before comparing with dataset references. Sentiment agreement was 25/30, or 83.3%, with kappa 0.667. Sarcasm agreement was 27/30, or 90.0%, with kappa 0.609. These figures measure my label agreement with the references, not a trained model's performance.\n\n## Week 1 news classification evaluation\n\nI completed Option C, labelling 30 news items and comparing my labels with two AI prompts and official dataset labels. My labels matched the official labels on 22/30 items, or 73.3%, with kappa 0.643. Both AI prompts matched the official labels on 24/30 items, or 80.0%, with kappa 0.733. My agreement with the specific AI prompt was 25/30, or 83.3%, with kappa 0.779. Business and Sci/Tech were the most confused categories. I also explored data leakage, class imbalance, confidence intervals and robustness, and built a Gradio classifier interface.\n\n## Week 2 newsroom triage application\n\nI completed Option B, working on a newsroom triage app with classification, retrieval, guardrails and stored runs. Hosted evaluation against my 30 manual labels scored 21/30, or 70.0%, with kappa 0.6132 for the reconstructed original configuration. The improved prompt and confidence floor of 0.80 scored 25/30, or 83.3%, with kappa 0.7829. These were separate runs with multiple configuration differences, so the improvement cannot be attributed to one prompt sentence. The app used Python, Groq and SQLite and was deployed on Render. The feature tests recorded 30 passes.\n\n## Week 3 portfolio chatbot\n\nI am working on Option B, a portfolio chatbot that retrieves passages from my notes and sends them to a language model. The starter application was deployed on Vercel and verified with a live Groq answer and an off-topic refusal. The starter's 49 tests passed. Personalisation and retrieval experiments are in progress, so I do not yet claim a measured retrieval improvement for my own content.",
+   "id": "projects-1",
+   "chars": 3101
+  },
+  {
+   "file": "skills.md",
+   "heading": "skills",
+   "text": "## Python and data analysis\n\nMy tools include Python, pandas, NumPy, SciPy, Jupyter, scikit-learn and Matplotlib. I have used preprocessing, exploratory data analysis, feature engineering and model evaluation in healthcare and internship projects. I use VS Code and Git/GitHub for project development.\n\n## Machine learning and explainability\n\nMy research experience includes LightGBM, XGBoost, CatBoost, Random Forest, neural networks, LSTM/GRU and ensemble comparisons. I have used SHAP, calibration, subgroup analysis and leakage auditing to examine model behaviour. PyTorch is also listed among my technical skills.\n\n## NLP and retrieval\n\nMy work includes clinical notes and coursework on sentiment and sarcasm. My CV lists TF-IDF and RoBERTa. Through the internship, I have worked with prompts, structured model outputs, agreement metrics and retrieval. I am currently learning to compare chunking and retrieval strategies in the portfolio chatbot.\n\n## Biomedical imaging\n\nMy imaging tools include PyVista, VTK, NiBabel, SciPy, MeshLab, ITK-SNAP, ParaView, Dragonfly and 3D Slicer. My coronary perfusion research involved segmentation outputs, vessel skeletonisation, Voronoi subdivision and mesh cleaning.\n\n## Application development\n\nThe internship has given me practical experience with Groq APIs, Gradio interfaces, SQLite, automated tests, GitHub Actions and deployment to Render and Vercel. I am developing my JavaScript skills through the Week 3 portfolio project.",
+   "id": "skills-1",
+   "chars": 1475
+  },
+  {
+   "file": "faq.md",
+   "heading": "faq",
+   "text": "## What roles are you interested in?\n\nI am interested in opportunities in AI, data science and health-tech, particularly work involving healthcare data, machine learning and careful evaluation.\n\n## What are you studying?\n\nI am studying MSc Artificial Intelligence at the University of Surrey. I previously completed MSc Healthcare Technologies at King's College London with Distinction and BSc Biomedical Sciences at Bangor University with a 2:1.\n\n## What is your notice period and availability?\n\nMy notice period is two weeks. An exact start date would need to be agreed directly.\n\n## Where are you based and what working arrangements do you prefer?\n\nI am based in Hampshire and prefer remote work. My relocation preferences are not specified in these notes.\n\n## Which projects involve healthcare?\n\nMy healthcare projects include psychiatric readmission risk prediction using MIMIC-IV and coronary perfusion modelling using CTCA and Voronoi subdivision. My CV also lists a group project on predicting and preventing gestational diabetes using machine learning.",
+   "id": "faq-1",
+   "chars": 1061
+  }
+ ]
+}

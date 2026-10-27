@@ -1,0 +1,1341 @@
+[
+  {
+    "id": 1,
+    "question": "Which university are you studying MSc Artificial Intelligence at?",
+    "kind": "answerable",
+    "passages": [
+      "faq-1",
+      "about-1",
+      "faq-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] I am studying MSc Artificial Intelligence at the University of Surrey. ## Education I am studying MSc Artificial Intelligence at the University of Surrey, which I started in February 2026.",
+    "blocked": false,
+    "trace": {
+      "question": "Which university are you studying MSc Artificial Intelligence at?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.4598406,
+          "chars": 599
+        },
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.4149347,
+          "chars": 600
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1524804,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "65 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "83% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2232,
+        "promptTokensEstimated": 558
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 2,
+    "question": "What result did you achieve in MSc Healthcare Technologies at King's College London?",
+    "kind": "answerable",
+    "passages": [
+      "faq-1",
+      "about-1",
+      "about-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] I hold an MSc Healthcare Technologies in the Medical AI pathway from King's College London I previously completed MSc Healthcare Technologies at King's College London with Distinction and BSc Biomedical Sciences at Bangor University with a 2:1.",
+    "blocked": false,
+    "trace": {
+      "question": "What result did you achieve in MSc Healthcare Technologies at King's College London?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.4552265,
+          "chars": 599
+        },
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.376181,
+          "chars": 600
+        },
+        {
+          "id": "about-2",
+          "heading": "about",
+          "score": 0.2405245,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "84 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "89% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2253,
+        "promptTokensEstimated": 564
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 3,
+    "question": "Which dataset does your psychiatric readmission research use?",
+    "kind": "answerable",
+    "passages": [
+      "faq-2",
+      "projects-1",
+      "experience-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## Psychiatric readmission risk prediction My psychiatric readmission research uses structured EHR data and clinical notes from MIMIC-IV. It investigates psychiatric readmission risk using structured electronic health records and clinical notes from MIMIC-IV.",
+    "blocked": false,
+    "trace": {
+      "question": "Which dataset does your psychiatric readmission research use?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.166571,
+          "chars": 600
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.1637864,
+          "chars": 600
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.1250054,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "61 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "89% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2239,
+        "promptTokensEstimated": 560
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 4,
+    "question": "What ROC-AUC did the final psychiatric readmission ensemble achieve?",
+    "kind": "answerable",
+    "passages": [
+      "projects-1",
+      "faq-2",
+      "faq-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] The final ensemble achieved ROC-AUC 0.8014 and PR-AUC 0.5965, as reported in my CV. ## Psychiatric readmission risk prediction My psychiatric readmission research uses structured EHR data and clinical notes from MIMIC-IV.",
+    "blocked": false,
+    "trace": {
+      "question": "What ROC-AUC did the final psychiatric readmission ensemble achieve?",
+      "retrieval": [
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.3691053,
+          "chars": 600
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1100007,
+          "chars": 600
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.0949892,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "68 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "90% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2238,
+        "promptTokensEstimated": 560
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 5,
+    "question": "Which method did you use for coronary perfusion subdivision?",
+    "kind": "answerable",
+    "passages": [
+      "faq-2",
+      "projects-2",
+      "skills-3"
+    ],
+    "answer": "[DEMO MODE, no API key set] My coronary perfusion research involved segmentation outputs, vessel skeletonisation, Voronoi subdivision and mesh cleaning. ## Coronary perfusion modelling My King's College London project modelled coronary perfusion territories using CTCA and Voronoi subdivision.",
+    "blocked": false,
+    "trace": {
+      "question": "Which method did you use for coronary perfusion subdivision?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.2229469,
+          "chars": 600
+        },
+        {
+          "id": "projects-2",
+          "heading": "projects",
+          "score": 0.1584208,
+          "chars": 600
+        },
+        {
+          "id": "skills-3",
+          "heading": "skills",
+          "score": 0.1077038,
+          "chars": 565
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "60 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "91% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2199,
+        "promptTokensEstimated": 550
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 6,
+    "question": "Which dataset did your sentiment and sarcasm coursework use?",
+    "kind": "answerable",
+    "passages": [
+      "projects-3",
+      "projects-2",
+      "skills-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## NLP sentiment and sarcasm My NLP coursework used the BESSTIE-CW-26 dataset for both sentiment and sarcasm. ## NLP sentiment and sarcasm My NLP coursework used the BESSTIE-CW-",
+    "blocked": false,
+    "trace": {
+      "question": "Which dataset did your sentiment and sarcasm coursework use?",
+      "retrieval": [
+        {
+          "id": "projects-3",
+          "heading": "projects",
+          "score": 0.2680106,
+          "chars": 600
+        },
+        {
+          "id": "projects-2",
+          "heading": "projects",
+          "score": 0.1412038,
+          "chars": 600
+        },
+        {
+          "id": "skills-2",
+          "heading": "skills",
+          "score": 0.1380665,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "60 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "78% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2239,
+        "promptTokensEstimated": 560
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 7,
+    "question": "What was the specific AI prompt accuracy against official labels in Week 1?",
+    "kind": "answerable",
+    "passages": [
+      "projects-4",
+      "projects-5",
+      "projects-6"
+    ],
+    "answer": "[DEMO MODE, no API key set] My agreement with the specific AI prompt was 25/30, or 83.3%, with kappa 0.779. eement with the specific AI prompt was 25/30, or 83.3%, with kappa 0.779.",
+    "blocked": false,
+    "trace": {
+      "question": "What was the specific AI prompt accuracy against official labels in Week 1?",
+      "retrieval": [
+        {
+          "id": "projects-4",
+          "heading": "projects",
+          "score": 0.3590689,
+          "chars": 600
+        },
+        {
+          "id": "projects-5",
+          "heading": "projects",
+          "score": 0.2666545,
+          "chars": 600
+        },
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.1302306,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "75 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "75% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2256,
+        "promptTokensEstimated": 564
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 8,
+    "question": "What kappa did the improved hosted Week 2 newsroom triage configuration achieve?",
+    "kind": "answerable",
+    "passages": [
+      "projects-5",
+      "projects-6",
+      "experience-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] Hosted evaluation against my 30 manual labels scored 21/30, or 70.0%, with kappa 0.6132 for the reconstructed original configuration. Week 2 involved improving, testing and deploying a newsroom triage application.",
+    "blocked": false,
+    "trace": {
+      "question": "What kappa did the improved hosted Week 2 newsroom triage configuration achieve?",
+      "retrieval": [
+        {
+          "id": "projects-5",
+          "heading": "projects",
+          "score": 0.3702423,
+          "chars": 600
+        },
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.2029162,
+          "chars": 600
+        },
+        {
+          "id": "experience-2",
+          "heading": "experience",
+          "score": 0.1400353,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "80 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "91% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2262,
+        "promptTokensEstimated": 566
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 9,
+    "question": "What confidence floor did the improved Week 2 newsroom triage configuration use?",
+    "kind": "answerable",
+    "passages": [
+      "projects-5",
+      "projects-6",
+      "experience-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] The improved prompt and confidence floor of 0.80 scored 2 The improved prompt and confidence floor of 0.80 scored 25/30, or 83.3%, with kappa 0.7829.",
+    "blocked": false,
+    "trace": {
+      "question": "What confidence floor did the improved Week 2 newsroom triage configuration use?",
+      "retrieval": [
+        {
+          "id": "projects-5",
+          "heading": "projects",
+          "score": 0.3513393,
+          "chars": 600
+        },
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.220316,
+          "chars": 600
+        },
+        {
+          "id": "experience-2",
+          "heading": "experience",
+          "score": 0.1292644,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "80 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "80% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2262,
+        "promptTokensEstimated": 566
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 10,
+    "question": "Where was the Week 2 newsroom triage app deployed?",
+    "kind": "answerable",
+    "passages": [
+      "projects-5",
+      "projects-6",
+      "experience-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] The app used Python, Groq and SQLite and was deployed on Render. ## Week 2 newsroom triage application I completed Option B, working on a newsroom triage app with classification, retrieval, guardrails and stored runs.",
+    "blocked": false,
+    "trace": {
+      "question": "Where was the Week 2 newsroom triage app deployed?",
+      "retrieval": [
+        {
+          "id": "projects-5",
+          "heading": "projects",
+          "score": 0.2733803,
+          "chars": 600
+        },
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.1795095,
+          "chars": 600
+        },
+        {
+          "id": "experience-2",
+          "heading": "experience",
+          "score": 0.1559856,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "50 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "90% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2232,
+        "promptTokensEstimated": 558
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 11,
+    "question": "What is your notice period?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-1",
+      "faq-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## What is your notice period and availability? t is your notice period and availability?",
+    "blocked": false,
+    "trace": {
+      "question": "What is your notice period?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.3972433,
+          "chars": 599
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.3424275,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "27 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "2 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "71% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1582,
+        "promptTokensEstimated": 396
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 12,
+    "question": "Where are you based?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-2",
+      "faq-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## Where are you based ## Where are you based and what working arrangements do you prefer?",
+    "blocked": false,
+    "trace": {
+      "question": "Where are you based?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.3305558,
+          "chars": 600
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.322795,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "20 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "2 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "75% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1575,
+        "promptTokensEstimated": 394
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 13,
+    "question": "What condition did your group healthcare machine learning project focus on?",
+    "kind": "needs_faq",
+    "passages": [
+      "faq-3",
+      "faq-2",
+      "faq-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] My CV also lists a group project on predicting and preventing gestational diabetes using machine learning. My CV also lists a group project on predicting and preventing gestational diabetes using machine learnin",
+    "blocked": false,
+    "trace": {
+      "question": "What condition did your group healthcare machine learning project focus on?",
+      "retrieval": [
+        {
+          "id": "faq-3",
+          "heading": "faq",
+          "score": 0.3226813,
+          "chars": 152
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.2650913,
+          "chars": 600
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.2483915,
+          "chars": 599
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "75 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "86% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1792,
+        "promptTokensEstimated": 448
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 14,
+    "question": "Who won the cricket world cup?",
+    "kind": "must_refuse",
+    "passages": [
+      "projects-6",
+      "about-3",
+      "skills-3"
+    ],
+    "answer": "[DEMO MODE, no API key set] The feature tests recorded 30 passes. The starter application was deploy",
+    "blocked": false,
+    "trace": {
+      "question": "Who won the cricket world cup?",
+      "retrieval": [
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.1438096,
+          "chars": 600
+        },
+        {
+          "id": "about-3",
+          "heading": "about",
+          "score": 0.1291605,
+          "chars": 157
+        },
+        {
+          "id": "skills-3",
+          "heading": "skills",
+          "score": 0.1286449,
+          "chars": 565
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "30 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "78% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1728,
+        "promptTokensEstimated": 432
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "answered anyway"
+    }
+  },
+  {
+    "id": 15,
+    "question": "What is the capital of Brazil?",
+    "kind": "must_refuse",
+    "passages": [
+      "faq-1",
+      "faq-2",
+      "experience-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## What are you studying? ## What roles are you interested in?",
+    "blocked": false,
+    "trace": {
+      "question": "What is the capital of Brazil?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.2804773,
+          "chars": 599
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1507541,
+          "chars": 600
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.1341172,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "30 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "67% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2202,
+        "promptTokensEstimated": 551
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "answered anyway"
+    }
+  },
+  {
+    "id": 16,
+    "question": "Where are you doing your current postgraduate degree?",
+    "kind": "paraphrase",
+    "passages": [
+      "faq-1",
+      "faq-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## Where are you based ## What are you studying?",
+    "blocked": false,
+    "trace": {
+      "question": "Where are you doing your current postgraduate degree?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.322795,
+          "chars": 599
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.287858,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "53 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "2 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "67% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 1608,
+        "promptTokensEstimated": 402
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 17,
+    "question": "What was the area under the ROC curve for your combined hospital readmission predictor?",
+    "kind": "paraphrase",
+    "passages": [
+      "faq-1",
+      "projects-1",
+      "faq-2"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## What is your notice period and availability? The final ensemble achieved ROC-AUC 0.8014 and PR-AUC 0.5965, as reported in my CV.",
+    "blocked": false,
+    "trace": {
+      "question": "What was the area under the ROC curve for your combined hospital readmission predictor?",
+      "retrieval": [
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.149371,
+          "chars": 599
+        },
+        {
+          "id": "projects-1",
+          "heading": "projects",
+          "score": 0.141602,
+          "chars": 600
+        },
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1240184,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "87 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "85% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2257,
+        "promptTokensEstimated": 565
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": true,
+      "why": "fact present"
+    }
+  },
+  {
+    "id": 18,
+    "question": "Which corpus did you use to study opinions and ironic language?",
+    "kind": "paraphrase",
+    "passages": [
+      "faq-2",
+      "faq-1",
+      "skills-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] I use VS Code and Git/GitHub for project development. ## Where are you based and what working arrangements do you prefer?",
+    "blocked": false,
+    "trace": {
+      "question": "Which corpus did you use to study opinions and ironic language?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1838506,
+          "chars": 600
+        },
+        {
+          "id": "faq-1",
+          "heading": "faq",
+          "score": 0.1459791,
+          "chars": 599
+        },
+        {
+          "id": "skills-1",
+          "heading": "skills",
+          "score": 0.1169667,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "63 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "83% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2231,
+        "promptTokensEstimated": 558
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 19,
+    "question": "Which hosting service runs your second-week article sorting tool?",
+    "kind": "paraphrase",
+    "passages": [
+      "faq-2",
+      "projects-5",
+      "projects-6"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## Week 2 newsroom triage application I completed Option B, working on a newsroom triage app with classification, retrieval, guardrails and stored runs. ## Which projects involve healthcare?",
+    "blocked": false,
+    "trace": {
+      "question": "Which hosting service runs your second-week article sorting tool?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1070835,
+          "chars": 600
+        },
+        {
+          "id": "projects-5",
+          "heading": "projects",
+          "score": 0.0771688,
+          "chars": 600
+        },
+        {
+          "id": "projects-6",
+          "heading": "projects",
+          "score": 0.0765468,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "65 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "89% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2241,
+        "promptTokensEstimated": 561
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  },
+  {
+    "id": 20,
+    "question": "Which geometric partitioning approach underpins your heart blood-supply model?",
+    "kind": "paraphrase",
+    "passages": [
+      "faq-2",
+      "experience-1",
+      "about-1"
+    ],
+    "answer": "[DEMO MODE, no API key set] ## Which projects involve healthcare? t is your notice period and availability?",
+    "blocked": false,
+    "trace": {
+      "question": "Which geometric partitioning approach underpins your heart blood-supply model?",
+      "retrieval": [
+        {
+          "id": "faq-2",
+          "heading": "faq",
+          "score": 0.1282161,
+          "chars": 600
+        },
+        {
+          "id": "experience-1",
+          "heading": "experience",
+          "score": 0.0920176,
+          "chars": 600
+        },
+        {
+          "id": "about-1",
+          "heading": "about",
+          "score": 0.0666698,
+          "chars": 600
+        }
+      ],
+      "guardrails": [
+        {
+          "ok": true,
+          "rule": "question-shape",
+          "detail": "78 characters"
+        },
+        {
+          "ok": true,
+          "rule": "no-relevant-passage",
+          "detail": "3 passages"
+        },
+        {
+          "ok": true,
+          "rule": "banned-phrase",
+          "detail": "none found"
+        },
+        {
+          "ok": true,
+          "rule": "grounded",
+          "detail": "80% of answer words in the notes"
+        }
+      ],
+      "tokens": {
+        "promptCharsSent": 2253,
+        "promptTokensEstimated": 564
+      },
+      "mode": "demo"
+    },
+    "status": 200,
+    "attempts": 1,
+    "grade": {
+      "correct": false,
+      "why": "fact missing from answer"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "method": "stopwords_removed",
+    "mode": "groq",
+    "graded_percent": 75.0,
+    "refusals_correct": 2,
+    "paraphrases_correct": 1,
+    "api_errors": 0
+  },
+  {
+    "method": "stopwords_kept",
+    "mode": "groq",
+    "graded_percent": 90.0,
+    "refusals_correct": 2,
+    "paraphrases_correct": 4,
+    "api_errors": 0
+  }
+]

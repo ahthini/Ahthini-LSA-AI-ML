@@ -1,0 +1,1 @@
+Original unpaced run. The evaluator did not distinguish API errors from incorrect answers. Treat the accuracy figures as unverified. Use task5_groq_paced for the corrected comparison. The original logs cannot establish which failures were API errors.

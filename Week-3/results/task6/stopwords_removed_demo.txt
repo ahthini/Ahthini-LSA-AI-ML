@@ -1,0 +1,39 @@
+chunks   : stopwords_removed.json (strategy "window", 19 chunks)
+method   : TF-IDF cosine
+settings : PASSAGES=3 FLOOR=0.05 MAX_CONTEXT_CHARS=4000
+key      : not set, demo mode
+
+id  kind         retr  ans   note
+------------------------------------------------------------------------------
+1   answerable   ok    ok    fact present
+2   answerable   ok    ok    fact present
+3   answerable   ok    ok    fact present
+4   answerable   ok    ok    fact present
+5   answerable   ok    ok    fact present
+6   answerable   ok    ok    fact present
+7   answerable   ok    FAIL  fact missing from answer
+8   answerable   ok    FAIL  fact missing from answer
+9   answerable   ok    ok    fact present
+10  answerable   ok    ok    fact present
+11  needs_faq    ok    FAIL  fact missing from answer
+12  needs_faq    ok    FAIL  fact missing from answer
+13  needs_faq    ok    ok    fact present
+14  must_refuse  ok    ok    refused
+15  must_refuse  ok    ok    refused
+16  paraphrase   MISS  FAIL  blocked: guardrail
+17  paraphrase   ok    ok    fact present
+18  paraphrase   MISS  FAIL  fact missing from answer
+19  paraphrase   ok    FAIL  fact missing from answer
+20  paraphrase   MISS  FAIL  fact missing from answer
+------------------------------------------------------------------------------
+answerable     8/10
+needs_faq      1/3
+must_refuse    2/2
+paraphrase     1/5
+
+retrieval found the fact : 17/20 (85.0%)
+retrieval MRR            : 0.792
+mean context waste       : 48.7%
+mean chars per question  : 1433
+api errors               : 0
+graded correct           : 12/20 (60.0%)

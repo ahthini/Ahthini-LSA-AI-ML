@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "stopwords_removed",
+    "max_absolute_error": 5.7876853809535334e-08,
+    "questions": 20,
+    "passed": true
+  },
+  {
+    "variant": "stopwords_kept",
+    "max_absolute_error": 6.88092242073779e-08,
+    "questions": 20,
+    "passed": true
+  }
+]
